@@ -1,15 +1,25 @@
 <template>
   <div id="app">
-    <Home/>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import VueRouter from 'vue-router';
 import Home from './components/pages/Home.vue';
+
+const routes = [
+  {path: '/', component: Home},
+]
+
+const router =  new VueRouter({
+  routes,
+  mode: 'history',
+});
 
 export default {
   name: 'app',
+  router,
   components: {
     Home
   }
@@ -21,7 +31,6 @@ export default {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 </style>

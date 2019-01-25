@@ -42,5 +42,18 @@ button {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   transition-duration: 0.4s;
+
+  p {
+    font-size: 1.1vw;
+    margin: 2vh auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  button {
+    p {
+      font-size: 1.8vh;
+    }
+  }
 }
 </style>
