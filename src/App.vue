@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import VueRouter from 'vue-router';
 import Home from './components/pages/Home.vue';
+import Footer from './components/partials/Footer.vue';
 
 const routes = [
   {path: '/', component: Home},
@@ -21,7 +23,8 @@ export default {
   name: 'app',
   router,
   components: {
-    Home
+    Home,
+    Footer,
   }
 }
 </script>
