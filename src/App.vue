@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Navbar/>
     <router-view></router-view>
     <Footer/>
   </div>
@@ -9,6 +10,7 @@
 import VueRouter from 'vue-router';
 import Home from './components/pages/Home.vue';
 import Footer from './components/partials/Footer.vue';
+import Navbar from './components/partials/Navbar.vue';
 
 const routes = [
   {path: '/', component: Home},
@@ -25,6 +27,7 @@ export default {
   components: {
     Home,
     Footer,
+    Navbar,
   }
 }
 </script>
