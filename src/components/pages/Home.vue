@@ -2,82 +2,100 @@
   <v-container fluid grid-list-md id="main">
     <v-layout row wrap>
       <v-flex xs12 id="jumbotron">
-        <h1>Computer Science Leaders<br>Scholarship Program</h1>
-        <p>A four-year scholarship and leadership development program for computer science undergraduate.</p>
-        <div id="btn-place">
-          <a href="https://www.google.com">
-            <button-square
-              text="About Program"
-              color="#fff"
-              hover="#000"
-            />
-          </a>
-          <a href="">
-            <button-square
-              text="Apply Now!"
-              color="#fff"
-              hover="#000"
-            />
-          </a>
+        <div id="jumbotron__content">
+          <h1>Computer Science Leaders<br>Scholarship Program</h1>
+          <p>A four-year scholarship and leadership development program for computer science undergraduate.</p>
+          <div id="btn-place">
+            <a href="programs">
+              <button-square
+                text="About Program"
+                color="#000"
+                hover="#fff"
+                medium="true"
+              />
+            </a>
+            <a href="apply">
+              <button-square
+                text="Apply Now!"
+                color="#000"
+                hover="#fff"
+                medium="true"
+              />
+            </a>
+          </div>
         </div>
+        <v-layout row wrap>
+          <v-flex md4 sm12 id="jumbotron__img">
+            <img src="./../../assets/camp.jpg" alt="">
+          </v-flex>
+        </v-layout>
       </v-flex>
-      <v-flex xs12 id="news">
-        <!-- <h1>Latest News</h1> -->
-      </v-flex>
+      <!-- <v-flex xs12 id="news">
+        <h1>Latest News</h1>
+      </v-flex> -->
       <v-layout row wrap id="content">
+
         <v-flex xs12>
           <v-layout row wrap>
-            <v-flex md7 xs12>
+            <v-flex md7 xs12 class="text" id="content__about">
+              <h2 class="content__smalltile">Our Story</h2>
               <h1 class="content__title">About CSLeaders</h1>
-              <p><b>Computer Science Leaders Scholarship (CS Leaders)</b> was first launched in 2015, The scholarship aims to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education.&nbsp;
-                <a href="/about"> >> Read more</a>
+              <p><b>Computer Science Leaders Scholarship (CS Leaders)</b> was first launched in 2015, The scholarship aims to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education.
               </p>
             </v-flex>
             <v-flex md5 xs12>
-              <img src="./../../assets/squads.jpg" alt="">
+              <div id="img__about">
+                <img src="./../../assets/women.jpg" alt="">
+              </div>
             </v-flex>
           </v-layout>
         </v-flex>
-        <v-flex xs12 id="home__scholarship">
-          <h1 class="content__title">Scholarship Program</h1>
-          <p>A four-year scholarship and leadership development program for computer science undergraduate at University of Indonesia (UI) and Bandung Institute of Technology (ITB).&nbsp;
-            <a href="/program">>> Read more</a>
-          </p>
+        
+        <v-flex xs12 id="content__scholarship">
+          <v-flex xs12 class="text">
+            <h2 class="content__smalltile">Our Program</h2>
+            <h1 class="content__title">Scholarship Program</h1>
+            <p>A four-year scholarship and leadership development program for computer science undergraduate at University of Indonesia (UI) and Bandung Institute of Technology (ITB).</p>
+          </v-flex>
+          <v-flex xs12>
+            <v-layout row wrap>
+              <v-flex md4 xs12 class="scholarship-item">
+                <h1>1.</h1>
+                <h2>Full-Term Tuition Fee</h2>
+                <p>Up to 4 years</p>
+              </v-flex>
+              <v-flex md4 xs12 class="scholarship-item">
+                <h1>2.</h1>
+                <h2>Full Living Costs</h2>
+                <p>For 1st year</p>
+              </v-flex>
+              <v-flex md4 xs12 class="scholarship-item">
+                <h1>3.</h1>
+                <h2>Book Allowance & Research Fund</h2>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-flex>
+
+        <v-flex xs12 id="content__join">
           <v-layout row wrap>
-            <v-flex xs4>
-              <p><b>Full-term Tuition Fee (up to 4 years)</b></p>
+            <v-flex md7 xs12 class="text">
+              <h1>Let's Join & Be Part of Us!</h1>
+              <a href="apply">
+                <button-square
+                  text="Apply Now!"
+                  color="rgb(6, 88, 196)"
+                  hover="#fff"
+                  big="true"
+                />
+              </a>
             </v-flex>
-            <v-flex xs4>
-              <p><b>Full Living Costs (for 1st year)</b></p>
-            </v-flex>
-            <v-flex xs4>
-              <p><b>Book Allowance & Research Fund</b></p>
-            </v-flex>
-          </v-layout>
-        </v-flex>
-        <v-flex xs12>
-          <h1 class="content__title">How to Join</h1>
-          <v-layout row wrap>
-            <v-flex md6 xs12>
-              <h1 class="content__subtitle">Syarat dan Ketentuan</h1>
-              <ul>
-                <li>Mahasiswa/i baru, angkatan 2017 berstatus akademik aktif Program Sarjana Ilmu Komputer (STEI untuk mahasiswa ITB) ditunjukkan dengan melampirkan fotokopi Kartu Tanda Mahasiswa (KTM)</li>
-                <li>Memiliki pengalaman berorganisasi di cantumkan dalam CV (CV lengkap dengan informasi biodata, tempat dan tanggal lahir, nomor telepon rumah/HP, alamat tinggal dan email)</li>
-                <li>Ijazah dan transkip nilai SLTA atau yang sederajat; (Nilai Ujian Nasional minimal rata-rata 7,5)</li>
-                <li>Mencantumkan sertifikat kejuaraan/prestasi minimal tingkat kabupaten/kota untuk maksimal 5 tahun terakhir</li>
-                <li>Membuat essay tentang hasrat terhadap teknologi informasi sebanyak 1 (satu) halaman ukuran A4, berbahasa Inggris.</li>
-                <li>Bukan perokok aktif dibuktikan dengan surat pernyataan bukan perokok aktif</li>
-              </ul>
-            </v-flex>
-            <v-flex md6 xs12>
-              <h1 class="content__subtitle">Dokumen Lainya</h1>
-              <ul>
-                <li>Pas Foto ukuran 4×6</li>
-                <li>Scan KTP / KTM* (jika belum memiliki KTP)</li>
-              </ul>
+            <v-flex md5 xs12>
+              <!-- <p>For application information:</p> -->
             </v-flex>
           </v-layout>
         </v-flex>
+
       </v-layout>
     </v-layout>
   </v-container>
@@ -95,29 +113,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* To be separated later */
-.content__title {
-  font-size: 1.8vw;
-  color: rgb(6, 88, 196);
-  padding-bottom: 20px;
-}
-
-.content__subtitle {
-  font-size: 1.4vw;
-  padding-bottom: 10px;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: red;
-}
-/* -------- */
+@import 'src/assets/css/contents.scss';
+$blue: rgb(6, 88, 196);
 
 #main {
   padding: 0;
@@ -128,31 +125,40 @@ h1 {
 }
 
 #jumbotron {
-  text-align: center;
-  height: 115vh;
-  background:
-    linear-gradient(
-      rgba(4, 145, 184, 0.7), 
-      rgba(10, 195, 246, 0.7),
-    ),
-    url('./../../assets/jumbotron.jpg');
+  text-align: left;
+  height: 100vh;
   h1 {
-    padding-top: 25vh;
+    padding-top: 30vh;
     padding-bottom: 2vh;
-    font-size: 4vw;
-    color: white;
+    font-size: 3.5vw;
+    color: black;
   }
   p {
-    padding: 0 30vw;
     padding-bottom: 4vh;
     font-size: 1.5vw;
-    color: white;
+    color: black;
+  }
+  #jumbotron__content {
+    z-index: 999;
+    position: absolute;
+    padding: 0 15vw 0 40vw;
+  }
+  #jumbotron__img {
+    height: 100vh;
+    overflow: hidden;
+    
+    img {
+      filter: brightness(60%);
+      height: 100%;
+      width: auto;
+      margin: 0 -18vw;
+    }
   }
 }
 
 #btn-place {
   a {
-    margin: 0 2.2vw;
+    margin-right: 2.2vw;
   }
 }
 
@@ -161,16 +167,55 @@ h1 {
 }
 
 #content {
-  margin: 0 20vw;
-  > .flex {
-    margin: 7vh 0;
-  }
   p, li {
     font-size: 1vw;
     line-height: 1.7vw;
   }
   li {
     margin-bottom: 15px;
+  }
+  
+  #content__about {
+    padding: 0 10vw 0 20vw;
+  }
+  #img__about {
+    height: 100%;
+    overflow: hidden;
+    img {
+      filter: brightness(60%);
+      height: 100%;
+      // width: auto;
+    }
+  }
+  #content__scholarship {
+    padding: 0 20vw 10vh 20vw;
+    background-color: #ECF7FD;
+
+    .scholarship-item {
+      padding: 2vw;
+      background-color: white;
+      margin-bottom: 3vh;
+      h1 {
+        font-size: 6vw;
+        color: $blue;
+      }
+      h2 {
+        font-weight: bold;
+        font-size: 1.5vw;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1vw;
+      }
+    }
+  }
+  #content__join {
+    padding: 0 20vw 10vh 20vw;
+
+    h1 {
+      font-size: 2vw;
+      margin-bottom: 3rem;
+    }
   }
 }
 
@@ -179,26 +224,29 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-  /* To be separated later */
-  .content__title {
-    font-size: 4vh;
-  }
-
-  .content__subtitle {
-    font-size: 3vh;
-  }
-  /* -------- */
-
   #jumbotron {
-    height: 80vh;
-    background-size: cover;
-    h1 {
-      padding: 20vh 10vw 2vh 10vw;
-      font-size: 4vh;
-    }
-    p {
-      padding: 0 15vw;
-      font-size: 2vh;
+    #jumbotron__content {
+      padding: 0;
+      text-align: center;
+      padding-right: 10vw;
+      padding-left: 10vw;
+      
+      h1 {
+        font-size: 4.3vh;
+        color: white;
+      }
+      p {
+        font-size: 2.5vh;
+        color: white;
+      }
+      .btn-square {
+        border: 2px solid white !important;
+        color: white !important;
+      }
+      .btn-square:hover {
+        color: black !important;
+        background-color: white !important;
+      }
     }
   }
 
@@ -208,13 +256,38 @@ h1 {
   }
 
   #content {
-    margin: 0 10vw;
+    margin: 0;
     > .flex {
-      margin: 5vh 0;
+      padding: 0;
     }
     p, li {
       font-size: 2vh;
       line-height: 2.7vh;
+    }
+    #content__about {
+      padding: 0 12vw;
+    }
+    #content__scholarship {
+      padding: 0 12vw 10vh 12vw;
+      .scholarship-item {
+        margin-bottom: 3vh;
+        padding: 2rem;
+        h1 {
+          font-size: 6vh;
+        }
+        h2 {
+          font-size: 3vh;
+        }
+        p {
+          font-size: 2.5vh;
+        }
+      }
+    }
+    #content__join {
+      padding: 0 12vw 10vh 12vw;
+      h1 {
+        font-size: 5vh;
+      }
     }
   }
 }

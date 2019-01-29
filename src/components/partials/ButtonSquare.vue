@@ -1,5 +1,6 @@
 <template>
   <button
+    :class="setClass"
     :style="style"
     @mouseover="mouseOver()"
     @mouseout="mouseOver()"
@@ -11,13 +12,17 @@
 <script>
 export default {
   name: 'ButtonSquare',
-  props: ['text', 'color', 'hover'],
+  props: ['text', 'color', 'hover', 'big', 'medium', 'small'],
   computed: {
     style() {
-      let border = `border: 2px solid ${this.color}`;
+      let border = `border-color: ${this.color}`;
       let color = 'color:' + (this.hovering ? this.hover : this.color);
       let background = 'background-color:' + (this.hovering ? this.color : 'rgba(0, 0, 0, 0)');
       return `${border};${color};${background}`;
+    },
+    setClass() {
+      let size = this.big ? 'btn-big' : (this.medium ? 'btn-med' : 'btn-sm');
+      return `btn-square ${size}`;
     }
   },
   data() {
@@ -28,7 +33,7 @@ export default {
   methods: {
     mouseOver() {
       this.hovering = !this.hovering;
-    }
+    },
   }
 }
 </script>
@@ -39,20 +44,42 @@ button {
   font-size: 1rem;
   padding: 0 45px;
   margin-bottom: 20px;
+  border-style: solid;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   transition-duration: 0.4s;
+}
 
+.btn-big {
+  border-width: 0.5rem;
   p {
-    font-size: 1.1vw;
+    font-size: 2vw;
+    font-weight: bold;
+    margin: 4vh 6vw;
+  }
+}
+
+.btn-med {
+  border-width: 0.2rem;
+  p {
+    font-size: 1vw;
+    font-weight: bold;
     margin: 2vh auto;
   }
 }
 
 @media screen and (max-width: 768px) {
-  button {
+  .btn-big {
     p {
-      font-size: 1.8vh;
+      font-size: 3vh;
+      margin: 4vh 6vw;
+    }
+  }
+
+  .btn-med {
+    p {
+      font-size: 2vh;
+      margin: 3vh auto;
     }
   }
 }

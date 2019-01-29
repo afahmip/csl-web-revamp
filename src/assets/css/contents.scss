@@ -1,0 +1,45 @@
+.content__title {
+  font-size: 1.8vw;
+  color: rgb(44, 44, 44);
+  padding-bottom: 4vh;
+}
+
+.content__smalltile {
+  font-size: 1vw;
+  color: rgb(6, 88, 196);
+  padding-bottom: 1.5vh;
+}
+
+.content__subtitle {
+  font-size: 1.4vw;
+  padding-bottom: 10px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+}
+
+.text {
+  margin: 10vh 0 5vh 0;
+}
+
+@media screen and (max-width: 768px) {
+  .content__title {
+    font-size: 4vh;
+  }
+
+  .content__smalltile {
+    font-size: 2vh;
+  }
+
+  .content__subtitle {
+    font-size: 3vh;
+  }
+}
