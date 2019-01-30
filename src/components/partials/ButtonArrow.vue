@@ -11,18 +11,16 @@
 
 <script>
 export default {
-  name: 'ButtonSquare',
-  props: ['text', 'color', 'hover', 'big', 'medium', 'small'],
+  name: 'ButtonArrow',
+  props: ['text', 'position', 'color', 'hover', 'big', 'medium', 'small'],
   computed: {
     style() {
-      let border = `border-color: ${this.color}`;
-      let color = 'color:' + (this.hovering ? this.hover : this.color);
-      let background = 'background-color:' + (this.hovering ? this.color : 'rgba(0, 0, 0, 0)');
-      return `${border};${color};${background}`;
+      let background = 'background-color:' + (this.hovering ? this.hover : this.color);
+      return `${background}`;
     },
     setClass() {
       let size = this.big ? 'btn-big' : (this.medium ? 'btn-med' : 'btn-sm');
-      return `btn-square ${size}`;
+      return `btn-arrow ${size}`;
     }
   },
   data() {
@@ -39,18 +37,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn-square {
+.btn-arrow {
+  // color: rgb(5, 112, 251);
+  color: white;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  padding: 0 45px;
-  margin-bottom: 20px;
-  border-style: solid;
+  padding: 20px 20px;
+  border: 0;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0);
   transition-duration: 0.4s;
 }
 
-.btn-square.btn-big {
+.btn-arrow.btn-big {
   border-width: 0.5rem;
   p {
     font-size: 2vw;
@@ -59,7 +57,7 @@ export default {
   }
 }
 
-.btn-square.btn-med {
+.btn-arrow.btn-med {
   border-width: 0.2rem;
   p {
     font-size: 1vw;
@@ -69,17 +67,19 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .btn-square.btn-big {
-    p {
-      font-size: 3vh;
-      margin: 4vh 6vw;
+  .btn-arrow {
+    + .btn-big {
+      p {
+        font-size: 3vh;
+        margin: 4vh 6vw;
+      }
     }
-  }
 
-  .btn-square.btn-med {
-    p {
-      font-size: 2vh;
-      margin: 3vh auto;
+    + .btn-med {
+      p {
+        font-size: 2vh;
+        margin: 3vh auto;
+      }
     }
   }
 }

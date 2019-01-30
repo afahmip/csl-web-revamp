@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="navbar">
     <v-toolbar color="primary" dark fixed app flat>
       <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-toolbar-title>Title</v-toolbar-title>
@@ -37,7 +37,7 @@ export default {
         },
         {
           title: 'Meet Our Scholars',
-          link: '',
+          link: '/scholars',
           children: [
             {
               title: 'CSLeaders Scholars',
@@ -63,6 +63,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#navbar {
+  z-index: 999;
+}
+
 a {
   text-decoration: none;
 }

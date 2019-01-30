@@ -9,11 +9,13 @@
 <script>
 import VueRouter from 'vue-router';
 import Home from './components/pages/Home.vue';
+import Scholars from './components/pages/Scholars.vue';
 import Footer from './components/partials/Footer.vue';
 import Navbar from './components/partials/Navbar.vue';
 
 const routes = [
   {path: '/', component: Home},
+  {path: '/scholars', component: Scholars},
 ]
 
 const router =  new VueRouter({

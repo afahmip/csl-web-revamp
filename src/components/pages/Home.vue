@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-md id="main">
+  <v-container fluid id="main">
     <v-layout row wrap>
       <v-flex xs12 id="jumbotron">
         <div id="jumbotron__content">
@@ -38,7 +38,7 @@
         <v-flex xs12>
           <v-layout row wrap>
             <v-flex md7 xs12 class="text" id="content__about">
-              <h2 class="content__smalltile">Our Story</h2>
+              <h2 class="content__smalltitle">Our Story</h2>
               <h1 class="content__title">About CSLeaders</h1>
               <p><b>Computer Science Leaders Scholarship (CS Leaders)</b> was first launched in 2015, The scholarship aims to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education.
               </p>
@@ -53,7 +53,7 @@
         
         <v-flex xs12 id="content__scholarship">
           <v-flex xs12 class="text">
-            <h2 class="content__smalltile">Our Program</h2>
+            <h2 class="content__smalltitle">Our Program</h2>
             <h1 class="content__title">Scholarship Program</h1>
             <p>A four-year scholarship and leadership development program for computer science undergraduate at University of Indonesia (UI) and Bandung Institute of Technology (ITB).</p>
           </v-flex>
@@ -114,7 +114,6 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/assets/css/contents.scss';
-$blue: rgb(6, 88, 196);
 
 #main {
   padding: 0;
@@ -139,7 +138,7 @@ h1 {
     color: black;
   }
   #jumbotron__content {
-    z-index: 999;
+    z-index: 1;
     position: absolute;
     padding: 0 15vw 0 40vw;
   }

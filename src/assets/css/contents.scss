@@ -1,12 +1,14 @@
+$blue: rgb(6, 88, 196);
+
 .content__title {
   font-size: 1.8vw;
   color: rgb(44, 44, 44);
   padding-bottom: 4vh;
 }
 
-.content__smalltile {
+.content__smalltitle {
   font-size: 1vw;
-  color: rgb(6, 88, 196);
+  color: $blue;
   padding-bottom: 1.5vh;
 }
 
@@ -35,7 +37,7 @@ a {
     font-size: 4vh;
   }
 
-  .content__smalltile {
+  .content__smalltitle {
     font-size: 2vh;
   }
 
