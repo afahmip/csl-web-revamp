@@ -3,7 +3,9 @@
     <v-layout row wrap>
       <v-flex xs12 id="jumbotron">
         <div id="jumbotron__content">
-          <h1>Computer Science Leaders<br>Scholarship Program</h1>
+          <transition name="fade">
+            <h1>Computer Science Leaders<br>Scholarship Program</h1>
+          </transition>
           <p>A four-year scholarship and leadership development program for computer science undergraduate.</p>
           <div id="btn-place">
             <a href="programs">
@@ -90,8 +92,11 @@
                 />
               </a>
             </v-flex>
-            <v-flex md5 xs12>
-              <!-- <p>For application information:</p> -->
+            <v-flex md5 xs12 id="click-here">
+              <a href="">
+                <p>For application<br>information:</p>
+                <h1>Click Here</h1>
+              </a>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -109,6 +114,7 @@ export default {
   components: {
     ButtonSquare,
   },
+
 }
 </script>
 
@@ -209,11 +215,31 @@ h1 {
     }
   }
   #content__join {
-    padding: 0 20vw 10vh 20vw;
+    padding: 0 0 0 20vw;
 
     h1 {
       font-size: 2vw;
       margin-bottom: 3rem;
+    }
+    button {
+      margin-bottom: 5vh;
+    }
+    #click-here {
+      background-color: #012EA3;
+      position: relative;
+      a {
+        position: absolute;
+        padding: 4vw;
+        height: 100%;
+        width: 100%;
+        color: white;
+      }
+      p {
+        font-size: 1vw;
+      }
+      h1 {
+        font-size: 3vw;
+      }
     }
   }
 }
@@ -283,9 +309,26 @@ h1 {
       }
     }
     #content__join {
-      padding: 0 12vw 10vh 12vw;
+      padding: 0;
+      .text {
+        padding: 0 12vw;
+      }
       h1 {
         font-size: 5vh;
+      }
+      #click-here {
+        // padding: 5vh 12vw;
+        // position: static;
+        a {
+          // position: static;
+        }
+        p {
+          font-size: 3vh;
+          line-height: 3.5vh;
+        }
+        h1 {
+          font-size: 6vh;
+        }
       }
     }
   }
