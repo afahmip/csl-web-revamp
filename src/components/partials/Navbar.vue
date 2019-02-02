@@ -1,21 +1,44 @@
 <template>
   <div id="navbar">
-    <v-toolbar color="primary" dark fixed app flat>
-      <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title>Title</v-toolbar-title>
+    <v-toolbar fixed clipped-left>
+      <v-toolbar-title>
+        <a href="/">
+          <img src="./../../assets/csl-navbar.png" alt="">
+        </a>
+      </v-toolbar-title>
+      
       <v-spacer></v-spacer>
+
       <v-toolbar-items class="hidden-sm-and-down">
-        <router-link
-          v-for="link in links"
-          :key="link.title"
-          :to="link.link"
-        >
-          <v-btn flat>
-            {{link.title}}
-          </v-btn>
-        </router-link>
+         <v-btn
+          v-for="item in links"
+          :key="item.icon"
+          :to="item.link"
+          flat
+        >{{ item.title }}</v-btn>
       </v-toolbar-items>
+
+      <v-toolbar-side-icon  @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
+
     </v-toolbar>
+
+    <v-navigation-drawer
+      temporary
+      v-model="drawer"
+      disable-resize-watcher
+      absolute
+      id = "drawer"
+    >
+      <v-list-tile
+        v-for="link in links"
+        :key="link.title"
+        :to="link.link"
+      >
+        <v-list-tile-content>
+          <v-list-tile-title>{{ link.title }}</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-navigation-drawer>
   </div>
 </template>
 
@@ -24,6 +47,7 @@ export default {
   name: 'Navbar',
   data() {
     return {
+      drawer: null,
       links: [
         {
           title: 'About Us',
@@ -65,6 +89,16 @@ export default {
 <style lang="scss" scoped>
 #navbar {
   z-index: 999;
+
+  nav {
+    background-color: white;
+    box-shadow: none;
+
+    img {
+      object-fit: cover;
+      height: 30px;
+    }
+  }
 }
 
 a {
