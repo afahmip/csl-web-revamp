@@ -29,8 +29,37 @@
         </v-layout>
       </v-flex>
 
-      <v-flex xs12>
-
+      <v-flex xs12 id="form">
+        <v-flex xs12 class="text">
+          <h2 class="content__smalltitle">Apply Now</h2>
+          <h1 class="content__title">Application Form</h1>
+          <p>Registration will be open June each year, to get notify, please fill in the form below:</p>
+        </v-flex>
+        <v-flex xs12 id="form__apply">
+          <v-text-field
+            v-model="name"
+            label="Name"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="email"
+            label="Email"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="address"
+            label="Address"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="school"
+            label="School"
+            required
+          ></v-text-field>
+          <v-btn>
+            Submit
+          </v-btn>
+        </v-flex>
       </v-flex>
 
     </v-layout>
@@ -39,7 +68,15 @@
 
 <script>
 export default {
-  name: 'Apply'
+  name: 'Apply',
+  data() {
+    return {
+      name: '',
+      email: '',
+      address: '',
+      school: '',
+    }
+  }
 }
 </script>
 
@@ -72,10 +109,31 @@ export default {
       }
     }
   }
+
+  #form {
+    padding: 0 20vw 10vh 20vw;
+    background-color: #ECF7FD;
+
+    p {
+      font-size: 1vw;
+    }
+
+    #form__apply {
+      padding: 2rem;
+      background-color: white;
+
+      button {
+        background-color: $blue;
+        color: white;
+        margin: 0;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
   #apply {
+
     #info {
       h1 {
         font-size: 4vh;
@@ -86,6 +144,25 @@ export default {
         
         .list-title {
           font-size: 2.7vh;
+        }
+      }
+    }
+
+    #form {
+      padding: 0 10vw 10vh 10vw;
+
+      p {
+        font-size: 2vh;
+      }
+
+      #form__apply {
+        padding: 2rem;
+        background-color: white;
+
+        button {
+          background-color: $blue;
+          color: white;
+          margin: 0;
         }
       }
     }

@@ -48,23 +48,23 @@ export default {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   transition-duration: 0.4s;
-}
 
-.btn-square.btn-big {
-  border-width: 0.5rem;
-  p {
-    font-size: 2vw;
-    font-weight: bold;
-    margin: 4vh 6vw;
+  &.btn-big {
+    border-width: 0.4rem;
+    p {
+      font-size: 1.5vw;
+      font-weight: bold;
+      margin: 4vh 5vw;
+    }
   }
-}
 
-.btn-square.btn-med {
-  border-width: 0.2rem;
-  p {
-    font-size: 1vw;
-    font-weight: bold;
-    margin: 2vh auto;
+  &.btn-med {
+    border-width: 0.2rem;
+    p {
+      font-size: 1vw;
+      font-weight: bold;
+      margin: 2vh auto;
+    }
   }
 }
 

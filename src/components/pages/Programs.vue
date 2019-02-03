@@ -79,13 +79,21 @@
 
       <v-flex xs12 id="program-scholarship">
         <v-layout row wrap>
-          <v-flex md6 xs12 class="text">
+          <v-flex md7 xs12 class="text">
             <h2 class="content__smalltitle">Our Program</h2>
             <h1 class="content__title">Scholarship Program</h1>
             <p>A four-year scholarship and leadership development program for computer science undergraduate at University of Indonesia (UI) and Bandung Institute of Technology (ITB).</p>
+            <br><br>
           </v-flex>
 
-          <v-flex md6 xs12 id="program-scholarship__list">
+          <v-flex md5 xs12 id="click-here">
+            <a href="/apply#info">
+              <p>For application<br>information:</p>
+              <h1>Click Here</h1>
+            </a>
+          </v-flex>
+
+          <!-- <v-flex md6 xs12 id="program-scholarship__list">
             <v-layout row wrap>
               <v-flex md4 xs12>
                 <v-layout row wrap>
@@ -107,7 +115,7 @@
                 </a>
               </v-flex>
             </v-layout>
-          </v-flex>
+          </v-flex> -->
 
         </v-layout>
       </v-flex>
@@ -137,7 +145,7 @@ export default {
   }
   #content {
     #content__block {
-      background-color: rgb(19, 122, 153);
+      background-color: $blue;
       height: 100vh;
     }
     #text {
@@ -224,25 +232,27 @@ export default {
 
     background-color: green;
 
-    #click-here {
+    
+  }
+
+  #click-here {
+    // height: 100%;
+    // width: 100%;
+    background-color: #012EA3;
+    // position: absolute;
+    position: relative;
+    a {
+      position: absolute;
+      padding: 4vw;
       height: 100%;
       width: 100%;
-      background-color: #012EA3;
-      // position: absolute;
-      // position: relative;
-      a {
-        // position: absolute;
-        padding: 4vw;
-        height: 100%;
-        width: 100%;
-        color: white;
-      }
-      p {
-        font-size: 1vw;
-      }
-      h1 {
-        font-size: 3vw;
-      }
+      color: white;
+    }
+    p {
+      font-size: 1vw;
+    }
+    h1 {
+      font-size: 3vw;
     }
   }
 }
@@ -291,6 +301,37 @@ export default {
       p {
         font-size: 2vh;
         padding: 0 3vw;
+      }
+    }
+  }
+
+  #program-scholarship {
+    padding: 0;
+
+    p {
+      font-size: 2vh;
+    }
+
+    .text {
+      padding: 0 10vw;
+    }
+    #program-scholarship__list {
+      height: 100%;
+    }
+
+    #click-here {
+      padding: 5vh 12vw;
+      position: static;
+      a {
+        position: static;
+        color: white;
+      }
+      p {
+        font-size: 3vh;
+        line-height: 3.5vh;
+      }
+      h1 {
+        font-size: 6vh;
       }
     }
   }

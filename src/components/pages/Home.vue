@@ -32,23 +32,67 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <!-- <v-flex xs12 id="news">
-        <h1>Latest News</h1>
-      </v-flex> -->
       <v-layout row wrap id="content">
+
+        <v-flex xs12 id="news">
+          <v-flex xs12 class="text">
+            <h2 class="content__smalltitle">Our Medium Page</h2>
+            <h1 class="content__title">Latest News</h1>
+          </v-flex>
+          <v-layout row wrap>
+            <v-flex
+              md5
+              sm12
+              v-for="article in articles"
+              :key="article.title"
+              class="news__article"
+            >
+              <div class="news-image">
+                <img :src="article.thumbnail" alt="">
+              </div>
+              <div class="news-content">
+                <a :href="article.link">
+                  <h1>{{article.title}}</h1>
+                </a>
+                <h2>{{article.date}}</h2>
+                <!-- <div class="news__categories">
+                  <div
+                    v-for="cat in article.categories"
+                    :key="cat"
+                  >
+                    {{cat}}
+                  </div>
+                </div> -->
+              </div>
+            </v-flex>
+            <v-flex md5 sm12 id="medium">
+              <p>
+                More on our <a href="https://medium.com/@ahmadizzan">Medium</a>
+              </p>
+            </v-flex>
+          </v-layout>
+        </v-flex>
 
         <v-flex xs12>
           <v-layout row wrap>
+            <v-flex md5 xs12>
+              <div id="img__about">
+                <img src="./../../assets/women.jpg" alt="">
+              </div>
+            </v-flex>
             <v-flex md7 xs12 class="text" id="content__about">
               <h2 class="content__smalltitle">Our Story</h2>
               <h1 class="content__title">About CSLeaders</h1>
               <p><b>Computer Science Leaders Scholarship (CS Leaders)</b> was first launched in 2015, The scholarship aims to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education.
               </p>
-            </v-flex>
-            <v-flex md5 xs12>
-              <div id="img__about">
-                <img src="./../../assets/women.jpg" alt="">
-              </div>
+              <a href="about-us">
+                <button-square
+                  text="Know More"
+                  color="#000"
+                  hover="#fff"
+                  medium="true"
+                />
+              </a>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -83,7 +127,7 @@
           <v-layout row wrap>
             <v-flex md7 xs12 class="text">
               <h1>Let's Join & Be Part of Us!</h1>
-              <a href="apply">
+              <a href="/apply#form">
                 <button-square
                   text="Apply Now!"
                   color="rgb(6, 88, 196)"
@@ -107,6 +151,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import ButtonSquare from './../partials/ButtonSquare.vue';
 
 export default {
@@ -114,7 +159,36 @@ export default {
   components: {
     ButtonSquare,
   },
-
+  data() {
+    return {
+      articles: [],
+    }
+  },
+  created() {
+    let url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ahmadizzan";
+    axios.get(url)
+    .then(response => {
+      this.parseArticle(response.data.items);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  },
+  methods: {
+    parseArticle(data) {
+      data.forEach(d => {
+        let article = {
+          title: d.title,
+          link: d.link,
+          thumbnail: d.thumbnail,
+          categories: d.categories,
+          date: d.pubDate,
+        }
+        this.articles.push(article);
+      });
+      this.articles = this.articles.slice(0, 3);
+    }
+  }
 }
 </script>
 
@@ -168,7 +242,68 @@ h1 {
 }
 
 #news {
-  background-color: white;
+  padding: 0 10vw 10vh 20vw;
+  background-color: rgb(241, 241, 241);
+
+  .text {
+    margin-bottom: 1vh;
+  }
+  .news__article {
+    height: 40vh;
+    padding: 0;
+    margin: 0 1rem 1rem 0;
+    background-color: white;
+
+    .news-image {
+      height: 50%;
+      overflow: hidden;
+    }
+
+    .news-content {
+      padding: 2rem;
+
+      h1 {
+        font-size: 1vw;
+        font-weight: bold;
+        color: $blue;
+        margin-bottom: 10px;
+        transition-duration: 0.4s;
+        &:hover {
+          color: rgb(89, 154, 253);
+        }
+      }
+      h2 {
+        font-size: 0.8vw;
+        margin-bottom: 20px;
+        color: gray;
+      }
+    }
+
+    .news__categories {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      >div {
+        padding: 10px 15px;
+        background-color: #ECF7FD;
+        margin-right: 4px;
+        border-radius: 5px;
+      }
+    }
+  }
+  #medium {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 2vw;
+      a {
+        color: $blue;
+      }
+    }
+  }
 }
 
 #content {
@@ -181,7 +316,10 @@ h1 {
   }
   
   #content__about {
-    padding: 0 10vw 0 20vw;
+    padding: 0 20vw 0 10vw;
+    p {
+      margin-bottom: 3rem;
+    }
   }
   #img__about {
     height: 100%;
@@ -189,7 +327,6 @@ h1 {
     img {
       filter: brightness(60%);
       height: 100%;
-      // width: auto;
     }
   }
   #content__scholarship {
@@ -278,6 +415,53 @@ h1 {
   #btn-place {
     display: flex;
     flex-direction: column;
+  }
+
+  #news {
+    padding: 0 10vw 10vh 20vw;
+
+    .text {
+      padding: 0 12vw;
+    }
+    .news__article {
+      height: 45vh;
+      padding: 0;
+      margin: 0 10vw 2vh 10vw;
+
+      .news-image {
+        height: 50%;
+      }
+
+      .news-content {
+        padding: 2rem;
+
+        h1 {
+          font-size: 2.5vh;
+          margin-bottom: 10px;
+        }
+        h2 {
+          font-size: 1.5vh;
+          margin-bottom: 20px;
+        }
+      }
+
+      .news__categories {
+        display: flex;
+        flex-direction: row;
+
+        >div {
+          padding: 10px 15px;
+          margin-right: 4px;
+          border-radius: 5px;
+        }
+      }
+    }
+    #medium {
+      margin: 8vh 10vw;
+      p {
+        font-size: 3vh;
+      }
+    }
   }
 
   #content {

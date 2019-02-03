@@ -43,7 +43,7 @@
             required
           ></v-text-field>
           <v-btn>
-            Validate
+            Submit
           </v-btn>
         </div>
       </v-flex>
@@ -107,6 +107,7 @@ export default {
     button {
       background-color: $blue;
       color: white;
+      margin: 0;
     }
   }
 }
