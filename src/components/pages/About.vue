@@ -1,34 +1,36 @@
 <template>
   <v-container fluid grid-list-md id="about-us">
     <v-flex id="about">
-      <v-layout row>
-          <v-flex md4 id="about-1">
-            <div />
+      <v-layout id="about-sec1">
+          <v-flex xl4 lg4 md4 sm12 class="p0">
+            <!-- <img src="./../../assets/about-1.jpg"/> -->
+            <div id="about-1"/>
           </v-flex>
-          <v-flex md8 class="content">
+          <v-flex xl8 lg8 md8 sm12 class="content">
             <h1>About Us</h1>
             <p>'I am member of a team, and I rely on the team. I defer to it and sacrifice for it, because the team, not the individual, is the ultimate champion.' - Mia Hamm</p>
           </v-flex>
       </v-layout>
-      <v-layout row>
-        <v-flex md4 id="about-2">
-          <div />
+      <v-layout id="about-sec2">
+        <v-flex xl4 lg4 md4 sm12 class="p0">
+          <!-- <img class="w25" src="./../../assets/about-2.jpg"/> -->
+          <div id="about-2"/>
         </v-flex>
-        <v-flex md8 id="about-2-blue">
+        <v-flex xl8 lg8 md8 sm12 class="w25" id="about-2-blue">
         </v-flex>
       </v-layout>
     </v-flex>
 
-    <v-flex id="initiator">
-      <v-layout row>
-        <v-flex md5 id="initiator-profile">
-            <div id="initiator-photo" />
+    <v-flex id=initiator>
+      <v-flex>
+        <v-flex md5 sm5 xs12 id="initiator-profile">
+            <img id="initiator-photo" src="./../../assets/Peng T. Ong.jpg"/>
             <div id="initiator-blue">
               <h3>Peng T. Ong</h3>
               <h4>Program Initiator</h4>
             </div>
         </v-flex>
-        <v-flex md7 id="initiator-wrapper">
+        <v-flex md7 sm7 xs12 id="initiator-wrapper">
           <div class="message">
             <h4 class="blue-font">Message from The Initiator</h4>
             <p class="text">Since the program first launched in 2015, The Computer Science Leaders Scholarship (CSLS) Program remains grounded in our mission to drive forward the country by improving the quality and quantity of talented individuals in Computer Science field. <br>
@@ -37,12 +39,11 @@
             <br> “the main goal of Computer Science Leaders Scholarship Program is to build the local tech ecosystem, and the best way to do that is by keeping the nation’s talent inside the country” <br> </p>
           </div>
         </v-flex>
-      </v-layout>
+      </v-flex>
     </v-flex>
 
     <v-flex id="journey">
-      <v-layout row>
-        <v-flex md8 id="journey-wrapper">
+        <v-flex md8 sm8 xs12 id="journey-wrapper">
           <div class="message">
             <h4 class="blue-font">About Our Journey</h4>
             <p class="text"><b>Computer Science Leaders Scholarship (CS Leaders)</b> was first launched in 2015, The scholarship aims to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education. <br>
@@ -51,11 +52,10 @@
             <br><b>We focus on Computer Science</b> this because Indonesia requires computer science skills to drive forward the country’s financial condition to be able to improve the welfare of the people, and <b>Computer Science is one of the 14 subsectors</b> that has been a focus of the government in their effort of growing the Indonesian economic. <br> </p>
           </div> 
         </v-flex>
-        <v-flex md4>
-          <div id="journey-1" />
-          <div id="journey-2" />
+        <v-flex md4 sm4>
+          <img xs6 src="./../../assets/journey-1.jpg" class="journey-img"/>
+          <img xs6 src="./../../assets/journey-2.jpg" class="journey-img"/>
         </v-flex>
-      </v-layout>
     </v-flex>
 
     <v-flex id="mission">
@@ -64,22 +64,20 @@
           <h4 class="blue-font">Our Mission</h4>
         </div>
       </v-layout>
-      <v-layout row>
-        <v-flex md6 class="placeholder-1">
-          <img id="mission-1" src="./../../assets/mission-1.jpg">
-          <div class="mission-text-1">
-            <h4>To Society &amp; Country </h4> 
-            <h5>We aim to drive forward the country by improving the quality and quantity of talented individuals in Computer Science field of study that will be able to develop the ICT Industry. <br></h5>
-          </div>
-        </v-flex>
-        <v-flex md6 class="placeholder-2">
-          <img id="mission-2" src="./../../assets/mission-2.jpg">
-          <div class="mission-text-2">
-            <h4>For Partners &amp; Industry </h4>
-            <h5>Help the tech industry grow through top talent acquisitions to enable businesses create new innovations that can help solve various problems that people face every day <br></h5>
-          </div>
-        </v-flex>
-      </v-layout>
+      <v-flex id="mission-1" xs12 sm6 md6 lg6>
+        <img src="./../../assets/mission-1.jpg">
+        <div class="mission-text">
+          <h4>To Society &amp; Country </h4> 
+          <h5>We aim to drive forward the country by improving the quality and quantity of talented individuals in Computer Science field of study that will be able to develop the ICT Industry. <br></h5>
+        </div>
+      </v-flex>
+      <v-flex id="mission-2" xs12 sm6 md6 lg6>
+        <img src="./../../assets/mission-2.jpg">
+        <div class="mission-text">
+          <h4>For Partners &amp; Industry </h4>
+          <h5>Help the tech industry grow through top talent acquisitions to enable businesses create new innovations that can help solve various problems that people face every day <br></h5>
+        </div>
+      </v-flex>
     </v-flex>
 
     <v-flex id="team">
@@ -89,52 +87,62 @@
           <h2>Our Board of Members</h2>
         </div>
       </v-layout>
-      <v-layout row class="member-holder">
-        <v-flex md2 offset-md2>
-          <img class="member-photo" src="./../../assets/Peng T. Ong.jpg"/>
+      <v-flex class="member-holder">
+        <v-flex xs10 offset-xs1 sm4 offset-sm1 md2 offset-md2>
+          <div class="member-photo">
+            <img src="./../../assets/Peng T. Ong.jpg"/>
+          </div>
           <div class="member-blue">
             <h4>Peng T. Ong</h4>
             <p class="text">Program Initiator</p>
           </div>
         </v-flex>
-        <v-flex md2 offset-md1>
-          <img class="member-photo" src="./../../assets/Andy Hidayat.jpg"/>
+        <v-flex xs10 offset-xs1 sm4 offset-sm2 md2 offset-md1>
+          <div class="member-photo">
+            <img src="./../../assets/Andy Hidayat.jpg"/>
+          </div>
           <div class="member-blue">
             <h4>Andy Hidayat</h4>
             <p class="text">Counselor of Foundation</p>
           </div>
         </v-flex>
-        <v-flex md2 offset-md1>
-          <img class="member-photo" src="./../../assets/Ali Rahman.jpg"/>
+        <v-flex xs10 offset-xs1 sm4 offset-sm1 md2 offset-md1>
+          <div class="member-photo">
+            <img src="./../../assets/Ali Rahman.jpg"/>
+          </div>
           <div class="member-blue">
             <h4>Ali Rahman</h4>
             <p class="text">Program Director</p>
           </div>
         </v-flex>
-      </v-layout>
-      <v-layout row class="member-holder">
-        <v-flex md2 offset-md2>
-          <img class="member-photo" src="./../../assets/Niko Radityo.jpg"/>
+        <v-flex xs10 offset-xs1 sm4 offset-sm2 md2 offset-md2>
+          <div class="member-photo">
+            <img src="./../../assets/Niko Radityo.jpg"/>
+          </div>
           <div class="member-blue">
             <h4>Niko Radityo</h4>
             <p class="text">Chairman of Foundation</p>
           </div>
         </v-flex>
-        <v-flex md2 offset-md1>
-          <img class="member-photo" src="./../../assets/Robbi Baskoro.jpg"/>
+        <v-flex xs10 offset-xs1 sm4 offset-sm1 md2 offset-md1>
+          <div class="member-photo">
+            <img src="./../../assets/Robbi Baskoro.jpg"/>
+          </div>
           <div class="member-blue">
             <h4>Robbi Baskoro</h4>
             <p class="text">Secretary of Foundation</p>
           </div>
         </v-flex>
-        <v-flex md2 offset-md1>
-          <img class="member-photo" src="./../../assets/Ratna Dewi.jpg"/>
+        <v-flex xs10 offset-xs1 sm4 offset-sm2 md2 offset-md1>
+          <div class="member-photo">
+            <img src="./../../assets/Ratna Dewi.jpg"/>
+          </div>
           <div class="member-blue">
             <h4>Ratna Dewi</h4>
             <p class="text">Treasurer of Foundation</p>
           </div>
         </v-flex>
-      </v-layout>
+      </v-flex>
     </v-flex>
 
   </v-container>
@@ -153,6 +161,19 @@ export default {
   margin-top: 100px;
   padding: 0px !important;
   margin-bottom: 100px;
+}
+
+.p0 {
+  padding: 0px !important;
+}
+
+.blue-font {
+  color: #08065a;
+}
+
+.flex {
+  display: inline-block;
+  vertical-align: top;
 }
 
 h1 {
@@ -182,12 +203,8 @@ h5 {
   padding-bottom: 2vh;
 }
 
-.blue-font {
-  color: #08065a;
-}
-
 .text {
-  font-size: 1vw;
+  font-size: 1.1vw;
   margin: 0px !important;
 }
 
@@ -197,39 +214,46 @@ h5 {
   vertical-align: middle;
   padding-left: 5vw !important;
   padding-right: 15vw !important;
+  padding-bottom: 5vw !important;
 }
 
 .content p {
   font-size: 1.5vw;
 }
 
+#about {
+  height: 60vh;
+}
+
 #about-1 {
-  filter: brightness(60%);
-  width: 100%;
-  height: 40vh;
-  max-width: 767px;
   background: url('./../../assets/about-1.jpg') no-repeat center;
   background-size: 100% auto;
+  height: 100%;
+}
+
+#about-sec2 {
+  height: 40%;
 }
 
 #about-2 {
-  filter: brightness(60%);
-  width: 100%;
-  height: 30vh;
-  max-width: 767px;
   background: url('./../../assets/about-2.jpg') no-repeat center;
-  background-size: 100% auto;
+  background-size: 100% auto; 
+  height: 100%;
 }
 
 #about-2-blue {
-  height: 30vh;
+  height: 100%;
   background-color: #08065a;
+  background-size: 100% auto;
+  background-position: 50% 90%;
 }
 
 #initiator {
-  padding-top: 10vh;
   padding-left: 20vw;
   padding-right: 20vw;
+  padding-top: 15vh;
+  width: 120vw;
+  height: 100%;
 }
 
 #initiator-profile {
@@ -237,20 +261,18 @@ h5 {
 }
 
 #initiator-photo {
-  height: 50vh;
-  width: 100%;
-  background: url('./../../assets/Peng T. Ong.jpg') no-repeat center;
+  // height: 50vh;
+  // width: 100%;
   background-size: 100% auto;
 }
 
 #initiator-blue {
   padding: 2vw;
-  height: 20vh;
+  // height: 18.5vh;
   background-color: #08065a;
 }
 
 #initiator-wrapper {
-  height: 70vh;
   background-color: #bfe6e7;
 }
 
@@ -264,82 +286,55 @@ h5 {
 }
 
 #journey-wrapper {
-  height: auto;
+  display: inline-block;
   padding-left: 20vw;
   padding-right: 5vw;
-}
-
-#journey-1 {
-  width: 100%;
-  height: 40vh;
-  max-width: 767px;
-  background: url('./../../assets/journey-1.jpg') no-repeat center;
-  background-size: 100% auto;
-}
-
-#journey-2 {
-  width: 100%;
-  height: 40vh;
-  max-width: 767px;
-  background: url('./../../assets/journey-2.jpg') no-repeat center;
-  background-size: 100% auto;
+  height: auto;
 }
 
 #mission {
   background-color: #e2e2e2;
+  width: 100%;
+  padding-bottom: 10vh;
 }
 
 #mission .message, #team .message {
   padding-left: 5vw !important;
   padding-bottom: 0 !important;
+  margin-bottom: 1vw;
 }
 
-.placeholder-1 {
-  padding-bottom: 10vh !important;
-  padding-left: 10vw !important;
-  padding-right: 2.5w !important;
+#mission-1, #mission-2 {
+  width: 100%;
+  height: auto;
+  max-height: 35vh;
+  // max-width: 767px;
+  background-size: 100% auto;
+  // padding-right: 2.5vw !important;
   color: white;
   position: relative;
   text-align: center;
+  padding: 5vw;
+  padding-top: 0;
 }
 
-.placeholder-2 {
-  padding-bottom: 10vh !important;
-  padding-left: 2.5vw !important;
-  padding-right: 10vw !important;
-  color: white;
-  position: relative;
-  text-align: center;
+@media (min-width: 1264px) {
+    
+  #mission-1 {
+    padding-right: 2.5vw;
+  }
+
+  #mission-2 {
+    padding-left: 2.5vw;
+  }
+
 }
 
-#mission-1 {
+#mission-1 img, #mission-2 img {
   filter: brightness(60%);
   width: 100%;
-  height: 35vh;
-  max-width: 767px;
-  background-size: 100% auto;
-}
-
-#mission-2 {
-  filter: brightness(60%);
-  width: 100%;
-  height: 35vh;
-  max-width: 767px;
-  background-size: 100% auto;
-}
-
-.mission-text-1 {
-  position: absolute;
-  top: 40%;
-  left: 42.5%;
-  transform: translate(-20%, -50%);
-}
-
-.mission-text-2 {
-  position: absolute;
-  top: 40%;
-  left: 42.5%;
-  transform: translate(-50%, -50%);
+  max-height: 30vh;
+  object-fit: cover;
 }
 
 #team {
@@ -351,15 +346,139 @@ h5 {
   padding-bottom: 4vw;
 }
 
+.member-holder div {
+  display: inline-block;
+  margin-bottom: 1vh;
+}
+
 .member-photo {
   height: 30vh;
   width: 100%;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+.member-photo img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: -1.5rem;
+}
+
+@media (min-width: 600px) and (max-width: 960px) {
+  .member-photo {
+    height: 25vh;
+  }
+
+  .member-photo img {
+    top: -1rem;
+  }
+}
+
+
+@media (max-width: 599px) {
+  .member-photo {
+    height: 60vw;
+  }
 }
 
 .member-blue {
   padding: 1.5vw;
-  height: 15vh;
+  height: calc(5vw + 5vh);
+  width: 100%;
   background-color: #08065a;
 }
 
+@media (min-width: 768px) {
+  .mission-text {
+    position: absolute;
+    top: 15%;
+    bottom: 25%;
+    left: 25%;
+    right: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3.5vh;
+    color: black;
+    padding-bottom: 2vh;
+  }
+
+  h2 {
+    font-size: 3vh;
+    color: black;
+    padding-bottom: 2vh;
+  }
+
+  h3 {
+    font-size: 2.5vh;
+    padding-bottom: 2vh;
+  }
+
+  h4 {
+    font-size: 1.5vh;
+    padding-bottom: 2vh;
+  }
+
+  h5 {
+    font-size: 1.2vh;
+    padding-bottom: 2vh;
+  }
+
+  .content p {
+    font-size: 1.5vh;
+  } 
+  .content {
+    height: 100%;
+    padding-top: 5vh  !important;
+    vertical-align: middle;
+    padding-left: 10vw !important;
+    padding-right: 10vw !important;
+    padding-bottom: 5vw !important;
+  }
+  #initiator {
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 5vh;
+    width: 120vw;
+    height: 100%;  
+  }
+  #journey {
+    padding-top: 5vh;
+  }
+  .journey-img {
+    display: inline-block;
+    width: 100%;
+    height: 30vh;
+  }
+  #journey-wrapper {
+    display: inline-block;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    height: auto;
+    padding-bottom: 5vw;
+  }
+  .mission-text {
+    position: absolute;
+    top: 10%;
+    bottom: 25%;
+    left: 25%;
+    right: 25%;
+  }
+  #mission-1 > img, #mission-2 > img {
+    max-height: 20vh;
+  }
+  #mission {
+    background-color: #e2e2e2;
+    width: 100%;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+  }
+  .text {
+    font-size: 1.5vh;
+  }
+}
 </style>
+
