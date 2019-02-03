@@ -23,14 +23,14 @@
 
     <v-flex id=initiator>
       <v-flex>
-        <v-flex md5 sm5 xs12 id="initiator-profile">
+        <v-flex md5 sm12 xs12 id="initiator-profile">
             <img id="initiator-photo" src="./../../assets/Peng T. Ong.jpg"/>
             <div id="initiator-blue">
               <h3>Peng T. Ong</h3>
               <h4>Program Initiator</h4>
             </div>
         </v-flex>
-        <v-flex md7 sm7 xs12 id="initiator-wrapper">
+        <v-flex md7 sm12 xs12 id="initiator-wrapper">
           <div class="message">
             <h4 class="blue-font">Message from The Initiator</h4>
             <p class="text">Since the program first launched in 2015, The Computer Science Leaders Scholarship (CSLS) Program remains grounded in our mission to drive forward the country by improving the quality and quantity of talented individuals in Computer Science field. <br>
