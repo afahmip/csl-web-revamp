@@ -93,7 +93,7 @@
               </a>
             </v-flex>
             <v-flex md5 xs12 id="click-here">
-              <a href="">
+              <a href="/apply#info">
                 <p>For application<br>information:</p>
                 <h1>Click Here</h1>
               </a>
@@ -317,10 +317,10 @@ h1 {
         font-size: 5vh;
       }
       #click-here {
-        // padding: 5vh 12vw;
-        // position: static;
+        padding: 5vh 12vw;
+        position: static;
         a {
-          // position: static;
+          position: static;
         }
         p {
           font-size: 3vh;

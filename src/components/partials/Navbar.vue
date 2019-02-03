@@ -26,7 +26,7 @@
       temporary
       v-model="drawer"
       disable-resize-watcher
-      absolute
+      fixed
       id = "drawer"
     >
       <v-list-tile
@@ -60,6 +60,11 @@ export default {
           children: []
         },
         {
+          title: 'Apply Now',
+          link: '/apply',
+          children: []
+        },
+        {
           title: 'Meet Our Scholars',
           link: '/scholars',
           children: [
@@ -74,6 +79,11 @@ export default {
               children: []
             }
           ]
+        },
+        {
+          title: 'Sponsor',
+          link: '/sponsor',
+          children: []
         },
         {
           title: 'Gallery',
@@ -97,6 +107,14 @@ export default {
     img {
       object-fit: cover;
       height: 30px;
+    }
+  }
+
+  aside {
+    padding: 1rem;
+    
+    >div {
+      padding: 1rem;
     }
   }
 }

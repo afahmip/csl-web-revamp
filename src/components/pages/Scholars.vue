@@ -71,6 +71,7 @@ export default {
   }
   #photo {
     height: 100vh;
+    overflow: hidden;
     img {
       height: 100%;
       width: auto;
@@ -81,6 +82,7 @@ export default {
 @media screen and (max-width: 768px) {
   #scholars__jumbotron {
     #content {
+      height: 70vh;
       h1 {
         font-size: 6vh;
       }
@@ -93,6 +95,7 @@ export default {
       }
     }
     #photo {
+      height: 30vh;
       img {
         width: 100%;
         height: auto;

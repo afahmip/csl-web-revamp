@@ -46,29 +46,29 @@ export default {
   border: 0;
   cursor: pointer;
   transition-duration: 0.4s;
-}
 
-.btn-arrow.btn-big {
-  border-width: 0.5rem;
-  p {
-    font-size: 2vw;
-    font-weight: bold;
-    margin: 4vh 6vw;
+  &.btn-big {
+    border-width: 0.5rem;
+    p {
+      font-size: 2vw;
+      font-weight: bold;
+      margin: 4vh 6vw;
+    }
   }
-}
 
-.btn-arrow.btn-med {
-  border-width: 0.2rem;
-  p {
-    font-size: 1vw;
-    font-weight: bold;
-    margin: 2vh auto;
+  &.btn-med {
+    border-width: 0.2rem;
+    p {
+      font-size: 1vw;
+      font-weight: bold;
+      margin: 2vh auto;
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
   .btn-arrow {
-    + .btn-big {
+    &.btn-big {
       p {
         font-size: 3vh;
         margin: 4vh 6vw;

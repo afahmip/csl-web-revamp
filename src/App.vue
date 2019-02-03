@@ -12,6 +12,8 @@ import Home from './components/pages/Home.vue';
 import Scholars from './components/pages/Scholars.vue';
 import Programs from './components/pages/Programs.vue';
 import About from './components/pages/About.vue';
+import Apply from './components/pages/Apply.vue';
+import Sponsor from './components/pages/Sponsor.vue';
 import Footer from './components/partials/Footer.vue';
 import Navbar from './components/partials/Navbar.vue';
 
@@ -20,6 +22,8 @@ const routes = [
   {path: '/scholars', component: Scholars},
   {path: '/about-us', component: About},
   {path: '/programs', component: Programs},
+  {path: '/apply', component: Apply},
+  {path: '/sponsor', component: Sponsor},
 ]
 
 const router =  new VueRouter({
@@ -32,7 +36,6 @@ export default {
   router,
   components: {
     Home,
-    About,
     Footer,
     Navbar,
   }
