@@ -14,6 +14,7 @@ import Programs from './components/pages/Programs.vue';
 import About from './components/pages/About.vue';
 import Apply from './components/pages/Apply.vue';
 import Sponsor from './components/pages/Sponsor.vue';
+import Gallery from './components/pages/Gallery.vue';
 import Footer from './components/partials/Footer.vue';
 import Navbar from './components/partials/Navbar.vue';
 
@@ -23,6 +24,7 @@ const routes = [
   {path: '/about-us', component: About},
   {path: '/programs', component: Programs},
   {path: '/apply', component: Apply},
+  {path: '/gallery', component: Gallery},
   {path: '/sponsor', component: Sponsor},
 ]
 
@@ -35,7 +37,6 @@ export default {
   name: 'app',
   router,
   components: {
-    Home,
     Footer,
     Navbar,
   }

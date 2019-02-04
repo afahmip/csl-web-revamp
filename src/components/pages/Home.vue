@@ -182,7 +182,7 @@ export default {
           link: d.link,
           thumbnail: d.thumbnail,
           categories: d.categories,
-          date: d.pubDate,
+          date: d.pubDate.split(' ')[0],
         }
         this.articles.push(article);
       });
@@ -325,6 +325,7 @@ h1 {
     height: 100%;
     overflow: hidden;
     img {
+      object-fit: cover;
       filter: brightness(60%);
       height: 100%;
     }

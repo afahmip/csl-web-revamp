@@ -11,20 +11,22 @@
             <p>'I am member of a team, and I rely on the team. I defer to it and sacrifice for it, because the team, not the individual, is the ultimate champion.' - Mia Hamm</p>
           </v-flex>
       </v-layout>
-      <v-layout id="about-sec2">
-        <v-flex xl4 lg4 md4 sm12 class="p0">
+      <v-layout id="about-sec2" row wrap>
+        <v-flex xl4 lg4 md4 sm12 xs12 class="p0">
           <!-- <img class="w25" src="./../../assets/about-2.jpg"/> -->
           <div id="about-2"/>
         </v-flex>
-        <v-flex xl8 lg8 md8 sm12 class="w25" id="about-2-blue">
+        <v-flex xl8 lg8 md8 sm12 xs12 class="w25" id="about-2-blue">
         </v-flex>
       </v-layout>
     </v-flex>
 
     <v-flex id=initiator>
-      <v-flex>
+      <v-layout row wrap>
         <v-flex md5 sm12 xs12 id="initiator-profile">
-            <img id="initiator-photo" src="./../../assets/Peng T. Ong.jpg"/>
+            <div id="initiator-photo">
+              <img src="./../../assets/Peng T. Ong.jpg"/>
+            </div>
             <div id="initiator-blue">
               <h3>Peng T. Ong</h3>
               <h4>Program Initiator</h4>
@@ -39,7 +41,7 @@
             <br> “the main goal of Computer Science Leaders Scholarship Program is to build the local tech ecosystem, and the best way to do that is by keeping the nation’s talent inside the country” <br> </p>
           </div>
         </v-flex>
-      </v-flex>
+      </v-layout>
     </v-flex>
 
     <v-flex id="journey">
@@ -158,7 +160,7 @@ export default {
 @import 'src/assets/css/contents.scss';
 
 #about-us {
-  margin-top: 100px;
+  // margin-top: 100px;
   padding: 0px !important;
   margin-bottom: 100px;
 }
@@ -168,7 +170,7 @@ export default {
 }
 
 .blue-font {
-  color: #08065a;
+  color: $blue;
 }
 
 .flex {
@@ -204,7 +206,7 @@ h5 {
 }
 
 .text {
-  font-size: 1.1vw;
+  font-size: 1vw;
   margin: 0px !important;
 }
 
@@ -222,7 +224,8 @@ h5 {
 }
 
 #about {
-  height: 60vh;
+  padding-top: 10vh;
+  height: 100vh;
 }
 
 #about-1 {
@@ -258,26 +261,29 @@ h5 {
 
 #initiator-profile {
   color: white;
+  padding: 0;
 }
 
 #initiator-photo {
-  // height: 50vh;
-  // width: 100%;
-  background-size: 100% auto;
+  height: 70%;
+  overflow: hidden;
+  img {
+    height: 100%;
+  }
 }
 
 #initiator-blue {
   padding: 2vw;
-  // height: 18.5vh;
-  background-color: #08065a;
+  height: 30%;
+  background-color: $blue;
 }
 
 #initiator-wrapper {
-  background-color: #bfe6e7;
+  background-color: #ECF7FD;
 }
 
 .message {
-  padding: 2.5vw;
+  padding: 3vw;
   font-size: 1vw;
 }
 
@@ -400,6 +406,9 @@ h5 {
 }
 
 @media (max-width: 767px) {
+  #about {
+    height: 70vh;
+  }
   h1 {
     font-size: 3.5vh;
     color: black;
@@ -439,8 +448,8 @@ h5 {
     padding-bottom: 5vw !important;
   }
   #initiator {
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
     padding-top: 5vh;
     width: 120vw;
     height: 100%;  
@@ -478,6 +487,9 @@ h5 {
   }
   .text {
     font-size: 1.5vh;
+  }
+  #about-2-blue {
+    display: none;
   }
 }
 </style>
