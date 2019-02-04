@@ -22,7 +22,7 @@
                 <img src="./../../assets/camp.jpg" alt="">
               </v-flex>
               <v-flex xs12 class="programs__jumbotron-photo">
-                <img src="./../../assets/camp.jpg" alt="">
+                <img src="./../../assets/program.jpg" alt="">
               </v-flex>
             </v-layout>
           </v-flex>
@@ -64,7 +64,7 @@
             <v-flex xs12 class="program-item">
               <v-layout row wrap>
                 <v-flex sm4 class="program-photo">
-                  <img src="./../../assets/camp.jpg" alt="">
+                  <img src="./../../assets/viral.jpg" alt="">
                 </v-flex>
                 <v-flex sm8 class="program-content">
                   <h1>03</h1>
