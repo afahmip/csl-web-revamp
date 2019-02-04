@@ -1,6 +1,7 @@
 <template>
   <v-container fluid id="scholars">
     <v-layout row wrap>
+
       <v-flex xs12 id="scholars__jumbotron">
         <v-layout row wrap>
           <v-flex md6 sm12 id="content">
@@ -23,6 +24,63 @@
           </v-flex>
         </v-layout>
       </v-flex>
+
+      <v-flex xs12 id="hall-of-fame">
+        <v-flex xs12 class="text">
+          <h2 class="content__smalltitle">Our Scholars</h2>
+          <h1 class="content__title">Hall Of Fame</h1>
+          <!-- <p>Our program objectives are to create top tech-talented candidates with job opportunities where they would be able to innovate, lead, and create positive results, as well as to help to grow the local industry and society with supply of top tech-talents.</p> -->
+        </v-flex>
+        <v-flex xs12>
+          <v-layout row wrap>
+            <v-flex xs12 class="program-item">
+              <v-layout row wrap>
+                <v-flex sm4 class="program-photo">
+                  <img src="./../../assets/hall/turfa.jpg" alt="">
+                </v-flex>
+                <v-flex sm8 class="program-content">
+                  <h2>Turfa Auliarachman won the 3rd place ICPC 2017!</h2>
+                  <p>ICPC (International Collegiate Programming Contest) is a competitive programming competition held by UGM. It’s part of UGM Vocomfest event, which is held annually. We are happy to inform that Turfa Auliarachman won the 3rd place in the competition. We hope that our scholars will be encouraged to achieve even more. Congratulation Turfa!</p>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+            <v-flex xs12 class="program-item">
+              <v-layout row wrap>
+                <v-flex sm4 class="program-photo">
+                  <!-- <img src="./../../assets/women.jpg" alt=""> -->
+                </v-flex>
+                <v-flex sm8 class="program-content">
+                  <h2>Fahmi and the team from UI won 2nd place in Google Games Southeast Asia 2017</h2>
+                  <p>Google Games is a fun mission-based event as teams from different schools go head to head in mind-twisting activities like solving coding problems and puzzle competitions.</p>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+            <v-flex xs12 class="program-item">
+              <v-layout row wrap>
+                <v-flex sm4 class="program-photo">
+                  <!-- <img src="./../../assets/hall/Valentina.png" alt=""> -->
+                </v-flex>
+                <v-flex sm8 class="program-content">
+                  <h2>Valentina Kania won the 1st place in Google Games Southeast Asia 2017</h2>
+                  <p>Valentina Kania (Awardee 2015) and her team-mates from UI won the 1st place in Side Mission Category</p>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+            <v-flex xs12 class="program-item">
+              <v-layout row wrap>
+                <v-flex sm4 class="program-photo">
+                  <img src="./../../assets/hall/annisa.jpg" alt="">
+                </v-flex>
+                <v-flex sm8 class="program-content">
+                  <h2>Annisa Nurul Azhar Participated in "Mobile App Development Competition" 2017</h2>
+                  <p>Annisa Nurul Azhar (Awardee 2015) with her team from ITB participated in "Mobile App Development Competition" held by Telkom University and got into top 8 rank in this competition.</p>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-flex>
+
     </v-layout>
   </v-container>
 </template>
@@ -75,6 +133,47 @@ export default {
     img {
       height: 100%;
       width: auto;
+    }
+  }
+}
+
+#hall-of-fame {
+  padding: 0 20vw 10vh 20vw;
+  background-color: #ECF7FD;
+  
+  p {
+    font-size: 1vw;
+  }
+
+  .program-item {
+    padding: 0;
+    background-color: white;
+    margin-bottom: 1vh;
+    h1 {
+      font-size: 6vw;
+      color: $blue;
+    }
+    h2 {
+      font-weight: bold;
+      font-size: 1.5vw;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 0.9vw;
+      line-height: 1.3vw;
+    }
+    .program-photo {
+      padding: 0;
+      justify-content: center;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        height: 100%;
+        max-width: 100%;
+      }
+    }
+    .program-content {
+      padding: 2vw;
     }
   }
 }
