@@ -81,11 +81,33 @@
         </v-flex>
       </v-flex>
 
+      <v-flex xs12 id="scholar-list">
+        <v-flex xs12 class="text">
+          <h2 class="content__smalltitle">Our Scholars</h2>
+          <h1 class="content__title">List of Scholars</h1>
+        </v-flex>
+        <v-flex xs12>
+          <div v-masonry transition-duration="0.3s" item-selector=".item" id="gallery__masonry">
+            <div v-masonry-tile class="item" :key="index" v-for="(item, index) in scholars">
+              <div class="image">
+                <img :src="item.image" alt="">
+              </div>
+              <div class="data">
+                <h1>{{item.name}}</h1>
+                <h2>{{item.university}}</h2>
+                <p>Batch 2016</p>
+              </div>
+            </div>
+          </div>
+        </v-flex>
+      </v-flex>
+
     </v-layout>
   </v-container>
 </template>
 
 <script>
+import axios from 'axios';
 import ButtonArrow from './../partials/ButtonArrow.vue';
 
 export default {
@@ -93,6 +115,26 @@ export default {
   components: {
     ButtonArrow,
   },
+  data() {
+    return {
+      scholars: [],
+    };
+  },
+  beforeMount() {
+    let url = 'http://127.0.0.1:8888/scholar/all';
+    axios.get(url)
+    .then(response => {
+      this.scholars = response.data.result;
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  },
+  methods: {
+    getScholars() {
+      
+    }
+  }
 }
 </script>
 
@@ -178,6 +220,32 @@ export default {
   }
 }
 
+#scholar-list {
+  padding: 0 20vw 10vh 20vw;
+  p {
+    font-size: 1vw;
+  }
+  .item {
+    width: 13vw;
+    height: 40vh;
+    margin-right: 0.5vw;
+    margin-bottom: 1.5rem;
+    .image {
+      overflow: hidden;
+    }
+    .data {
+      padding: 1.5vw 1vw;
+      h1 {
+        font-size: 1.2vw;
+        color: $blue;
+      }
+      h2, p {
+        font-size: 0.9vw;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   #scholars__jumbotron {
     #content {
@@ -199,6 +267,21 @@ export default {
         width: 100%;
         height: auto;
         overflow: hidden;
+      }
+    }
+  }
+  #scholar-list {
+    padding: 0 10vw 10vh 10vw;
+    .item {
+      height: 33vh;
+      width: 38vw;
+      .data {
+        h1 {
+          font-size: 2vh;
+        }
+        h2, p {
+          font-size: 2vh;
+        }
       }
     }
   }

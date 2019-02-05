@@ -52,11 +52,11 @@
             required
           ></v-text-field>
           <v-text-field
-            v-model="school"
-            label="School"
+            v-model="university"
+            label="University"
             required
           ></v-text-field>
-          <v-btn>
+          <v-btn v-on:click="submit">
             Submit
           </v-btn>
         </v-flex>
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Apply',
   data() {
@@ -74,7 +76,31 @@ export default {
       name: '',
       email: '',
       address: '',
-      school: '',
+      university: '',
+    }
+  },
+  methods: {
+    submit() {
+      let url = 'http://127.0.0.1:8888/scholar_app/';
+      axios.post(url, {
+        name: this.name,
+        email: this.email,
+        address: this.address,
+        university: this.university,
+      })
+      .then(response => {
+        if(response.status === 200)
+          this.clearForm();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+    clearForm() {
+      this.name = "";
+      this.email = "";
+      this.address = "";
+      this.university = "";
     }
   }
 }

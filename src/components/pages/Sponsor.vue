@@ -42,7 +42,10 @@
             label="Email"
             required
           ></v-text-field>
-          <v-btn>
+          <v-btn
+            id="sponsor__submit"
+            v-on:click="submit"
+          >
             Submit
           </v-btn>
         </div>
@@ -53,6 +56,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Sponsor',
   data() {
@@ -62,6 +67,32 @@ export default {
       company: '',
       phone: '',
       email: '',
+    }
+  },
+  methods: {
+    submit() {
+      let url = 'http://127.0.0.1:8888/sponsor_app/';
+      axios.post(url, {
+        name: this.name,
+        position: this.position,
+        company: this.company,
+        phone: this.phone,
+        email: this.email
+      })
+      .then(response => {
+        if(response.status === 200)
+          this.clearForm();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    },
+    clearForm() {
+      this.name = "";
+      this.position = "";
+      this.company = "";
+      this.phone = "";
+      this.email = "";
     }
   }
 }

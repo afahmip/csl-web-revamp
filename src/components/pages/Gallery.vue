@@ -27,7 +27,7 @@ export default {
     };
   },
   created() {
-    for(let i=0; i<=8; i++)
+    for(let i=0; i<=12; i++)
       this.blocks.push(
         {
           src: require(`./../../assets/gallery/${i}.jpg`)
@@ -51,8 +51,8 @@ export default {
     margin-top: 2rem;
     .item {
       width: 25vw;
-      margin-right: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-right: 1vw;
+      margin-bottom: 1vw;
       transition-duration: 0.4s;
       &:hover {
         z-index: 9999;
@@ -72,8 +72,8 @@ export default {
       margin-top: 2rem;
       .item {
         width: 37vw;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-right: 1.2vw;
+        margin-bottom: 1.2vw;
       }
     }
   }
