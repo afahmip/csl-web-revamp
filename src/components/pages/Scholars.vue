@@ -81,6 +81,50 @@
         </v-flex>
       </v-flex>
 
+      <v-flex
+        xs12
+        id="modal"
+        v-if="alert"
+        @click="handleModal(-1)"
+      >
+        <v-alert
+          :value="alert"
+          transition="scale-transition"
+        >
+          <div id="modal__content">
+            <v-layout row wrap id="wrap">
+              <v-flex md5 sm12 id="modal__image">
+                <img :src="modal.image" alt="">
+              </v-flex>
+              <v-flex md7 sm12 id="modal__data">
+                <h1>{{modal.name}}</h1>
+                <h2>{{modal.university}}</h2>
+                <h3>Batch {{modal.batch}}</h3>
+                <p>{{modal.description}}</p>
+                <div id="modal__btn">
+                  <a :href="modal.cv">
+                    <button-square
+                      text="Download CV"
+                      color="rgb(6, 88, 196)"
+                      hover="#fff"
+                      small="true"
+                    />
+                  </a>
+                  <a :href="modal.linkedin">
+                    <button-square
+                      text="LinkedIn"
+                      color="rgb(6, 88, 196)"
+                      hover="#fff"
+                      small="true"
+                    />
+                  </a>
+                </div>              
+              </v-flex>
+            </v-layout>
+          </div>
+        </v-alert>
+      </v-flex>
+
       <v-flex xs12 id="scholar-list">
         <v-flex xs12 class="text">
           <h2 class="content__smalltitle">Our Scholars</h2>
@@ -89,13 +133,15 @@
         <v-flex xs12>
           <div v-masonry transition-duration="0.3s" item-selector=".item" id="gallery__masonry">
             <div v-masonry-tile class="item" :key="index" v-for="(item, index) in scholars">
-              <div class="image">
-                <img :src="item.image" alt="">
-              </div>
-              <div class="data">
-                <h1>{{item.name}}</h1>
-                <h2>{{item.university}}</h2>
-                <p>Batch 2016</p>
+              <div @click="handleModal(index)">
+                <div class="image">
+                  <img :src="item.image" alt="">
+                </div>
+                <div class="data">
+                  <h1>{{item.name}}</h1>
+                  <h2>{{item.university}}</h2>
+                  <p>Batch {{item.batch}}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -109,15 +155,26 @@
 <script>
 import axios from 'axios';
 import ButtonArrow from './../partials/ButtonArrow.vue';
+import ButtonSquare from './../partials/ButtonSquare.vue';
 
 export default {
   name: 'Scholars',
   components: {
     ButtonArrow,
+    ButtonSquare,
   },
   data() {
     return {
       scholars: [],
+      alert: false,
+      modal: {
+        name: '',
+        description: '',
+        university: '',
+        cv: '',
+        linkedin: '',
+        image: '',
+      }
     };
   },
   beforeMount() {
@@ -131,15 +188,94 @@ export default {
     })
   },
   methods: {
-    getScholars() {
-      
+    handleModal(key) {
+      this.alert = !this.alert;
+      if(this.alert) {
+        let profile = this.scholars[key];
+        this.modal = {
+          name: profile.name,
+          description: profile.description,
+          cv: profile.cv,
+          university: profile.university,
+          linkedin: profile.linkedin,
+          image: profile.image
+        };
+        document.documentElement.style.overflow = 'hidden';
+      } else {
+        this.modal = {
+          name: '',
+          description: '',
+          cv: '',
+          university: '',
+          linkedin: '',
+          image: ''
+        };
+        document.documentElement.style.overflow = 'auto';
+      }
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 @import 'src/assets/css/contents.scss';
+
+html, body {
+  height: 100%;
+}
+#modal {
+  background-color: rgba(0,0,0,0.3);
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-content: center;
+
+  #modal__content {
+    height: 60vh;
+    width: 70vw;
+    background-color: white;
+    #wrap {
+      height: 100%;
+      #modal__data {
+        padding: 4vw;
+        h1 {
+          color: $blue;
+          font-size: 2vw;
+          margin-bottom: 1.5vh;
+        }
+        h2 {
+          color: rgb(54, 54, 54);
+          font-size: 1.3vw;
+        }
+        h3 {
+          color: rgb(54, 54, 54);
+          font-size: 1.3vw;
+          margin-bottom: 3vh;
+        }
+        p {
+          font-size: 0.8vw;
+          color: black;
+        }
+        #modal__btn {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      #modal__image {
+        overflow: hidden;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+}
 
 #scholars {
   padding: 0;
@@ -226,6 +362,7 @@ export default {
     font-size: 1vw;
   }
   .item {
+    cursor: pointer;
     width: 13vw;
     height: 40vh;
     margin-right: 0.5vw;
@@ -247,6 +384,44 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
+  #modal {
+    #modal__content {
+      min-height: 80vh;
+      width: 90vw;
+      #wrap {
+        height: 100%;
+        #modal__data {
+          padding: 4vw;
+          h1 {
+            font-size: 3vh;
+            margin-bottom: 1vh;
+          }
+          h2 {
+            font-size: 2vh;
+          }
+          h3 {
+            font-size: 2vh;
+            margin-bottom: 2vh;
+          }
+          p {
+            font-size: 1.5vh;
+          }
+          #modal__btn {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+        #modal__image {
+          overflow: hidden;
+          height: 40%;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
   #scholars__jumbotron {
     #content {
       height: 70vh;

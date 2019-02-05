@@ -66,6 +66,15 @@ export default {
       margin: 2vh auto;
     }
   }
+
+  &.btn-sm {
+    border-width: 0.2rem;
+    p {
+      font-size: 0.8vw;
+      font-weight: bold;
+      margin: 1vh auto;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -80,6 +89,13 @@ export default {
     p {
       font-size: 2vh;
       margin: 3vh auto;
+    }
+  }
+
+  .btn-square.btn-sm {
+    p {
+      font-size: 1.5vh;
+      margin: 1.5vh auto;
     }
   }
 }
