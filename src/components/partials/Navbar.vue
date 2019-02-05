@@ -98,7 +98,7 @@ export default {
 
 <style lang="scss" scoped>
 #navbar {
-  z-index: 999;
+  z-index: 9999;
 
   nav {
     background-color: white;

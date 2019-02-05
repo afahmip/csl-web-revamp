@@ -55,7 +55,7 @@ export default {
       margin-bottom: 1vw;
       transition-duration: 0.4s;
       &:hover {
-        z-index: 9999;
+        z-index: 999;
         width: 30vw;
       }
     }
