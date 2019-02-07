@@ -264,7 +264,7 @@ export default {
         display: none;
       }
       #text {
-        padding: 30vh 10vw 0 10vw;
+        padding: 20vh 10vw 0 10vw;
         color: black;
         h1 {
           font-size: 4.3vh;
@@ -276,7 +276,14 @@ export default {
       }
     }
     #programs__photo-wrapper {
-      height: auto;
+      height: 100%;
+
+      .programs__jumbotron-photo {
+        height: 100%;
+      }
+      .programs__jumbotron-photo:first-child{
+        display: none;
+      }
     }
   }
 

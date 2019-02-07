@@ -33,7 +33,7 @@
         </v-flex>
         <v-flex xs12>
           <v-layout row wrap>
-            <v-flex xs12 class="program-item">
+            <v-flex xs12 class="hall-item">
               <v-layout row wrap>
                 <v-flex sm4 class="program-photo">
                   <img src="./../../assets/hall/turfa.jpg" alt="">
@@ -44,7 +44,7 @@
                 </v-flex>
               </v-layout>
             </v-flex>
-            <v-flex xs12 class="program-item">
+            <v-flex xs12 class="hall-item">
               <v-layout row wrap>
                 <v-flex sm4 class="program-photo">
                   <!-- <img src="./../../assets/women.jpg" alt=""> -->
@@ -55,7 +55,7 @@
                 </v-flex>
               </v-layout>
             </v-flex>
-            <v-flex xs12 class="program-item">
+            <v-flex xs12 class="hall-item">
               <v-layout row wrap>
                 <v-flex sm4 class="program-photo">
                   <!-- <img src="./../../assets/hall/Valentina.png" alt=""> -->
@@ -66,7 +66,7 @@
                 </v-flex>
               </v-layout>
             </v-flex>
-            <v-flex xs12 class="program-item">
+            <v-flex xs12 class="hall-item">
               <v-layout row wrap>
                 <v-flex sm4 class="program-photo">
                   <img src="./../../assets/hall/annisa.jpg" alt="">
@@ -178,7 +178,7 @@ export default {
     };
   },
   beforeMount() {
-    let url = 'http://127.0.0.1:8888/scholar/all';
+    let url = 'https://52c7ccbc.ngrok.io/scholar/all';
     axios.get(url)
     .then(response => {
       this.scholars = response.data.result;
@@ -323,7 +323,7 @@ html, body {
     font-size: 1vw;
   }
 
-  .program-item {
+  .hall-item {
     padding: 0;
     background-color: white;
     margin-bottom: 1vh;
@@ -419,6 +419,39 @@ html, body {
             height: auto;
           }
         }
+      }
+    }
+  }
+  #hall-of-fame {
+    padding: 0 10vw 10vh 10vw;
+    
+    p {
+      font-size: 1vw;
+    }
+
+    .hall-item {
+      padding: 0;
+      background-color: white;
+      h2 {
+        font-size: 3vh;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 2vh;
+        line-height: 3vh;
+      }
+      .program-photo {
+        padding: 0;
+        justify-content: center;
+        overflow: hidden;
+        img {
+          object-fit: cover;
+          height: 100%;
+          max-width: 100%;
+        }
+      }
+      .program-content {
+        padding: 2vh;
       }
     }
   }
