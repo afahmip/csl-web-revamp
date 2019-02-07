@@ -95,7 +95,9 @@
             <img src="./../../assets/Peng T. Ong.jpg"/>
           </div>
           <div class="member-blue">
-            <h4>Peng T. Ong</h4>
+            <a href="">
+              <h4>Peng T. Ong</h4>
+            </a>
             <p class="text">Program Initiator</p>
           </div>
         </v-flex>
@@ -350,6 +352,11 @@ h5 {
 .member-holder {
   color: white;
   padding-bottom: 4vw;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .member-holder div {

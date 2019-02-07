@@ -17,6 +17,7 @@ import Sponsor from './components/pages/Sponsor.vue';
 import Gallery from './components/pages/Gallery.vue';
 import Footer from './components/partials/Footer.vue';
 import Navbar from './components/partials/Navbar.vue';
+import Profile from './components/pages/Profile.vue';
 
 const routes = [
   {path: '/', component: Home},
@@ -26,6 +27,7 @@ const routes = [
   {path: '/apply', component: Apply},
   {path: '/gallery', component: Gallery},
   {path: '/sponsor', component: Sponsor},
+  {path: '/profile/:name', component: Profile},
 ]
 
 const router =  new VueRouter({
