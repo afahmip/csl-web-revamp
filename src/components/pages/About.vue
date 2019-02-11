@@ -83,78 +83,61 @@
     </v-flex>
 
     <v-flex id="team">
+
       <v-layout row>
         <div class="message">
           <h4 class="blue-font">The Team Behind CSLeaders</h4>
           <h2>Our Board of Members</h2>
         </div>
       </v-layout>
+
       <v-flex class="member-holder">
-        <v-flex xs10 offset-xs1 sm4 offset-sm1 md2 offset-md2>
+        <v-flex
+          xs10 offset-xs1 sm4 offset-sm1 md2
+          v-for="profile in profiles"
+          :key="profile.name"
+          :offset-md2="profile.key%3===0"
+          :offset-md1="profile.key%3!==0"
+        >
           <div class="member-photo">
-            <img src="./../../assets/Peng T. Ong.jpg"/>
+            <img :src="profile.image"/>
           </div>
           <div class="member-blue">
-            <a href="">
-              <h4>Peng T. Ong</h4>
+            <a :href="profile.route">
+              <h4>{{profile.name}}</h4>
             </a>
-            <p class="text">Program Initiator</p>
-          </div>
-        </v-flex>
-        <v-flex xs10 offset-xs1 sm4 offset-sm2 md2 offset-md1>
-          <div class="member-photo">
-            <img src="./../../assets/Andy Hidayat.jpg"/>
-          </div>
-          <div class="member-blue">
-            <h4>Andy Hidayat</h4>
-            <p class="text">Counselor of Foundation</p>
-          </div>
-        </v-flex>
-        <v-flex xs10 offset-xs1 sm4 offset-sm1 md2 offset-md1>
-          <div class="member-photo">
-            <img src="./../../assets/Ali Rahman.jpg"/>
-          </div>
-          <div class="member-blue">
-            <h4>Ali Rahman</h4>
-            <p class="text">Program Director</p>
-          </div>
-        </v-flex>
-        <v-flex xs10 offset-xs1 sm4 offset-sm2 md2 offset-md2>
-          <div class="member-photo">
-            <img src="./../../assets/Niko Radityo.jpg"/>
-          </div>
-          <div class="member-blue">
-            <h4>Niko Radityo</h4>
-            <p class="text">Chairman of Foundation</p>
-          </div>
-        </v-flex>
-        <v-flex xs10 offset-xs1 sm4 offset-sm1 md2 offset-md1>
-          <div class="member-photo">
-            <img src="./../../assets/Robbi Baskoro.jpg"/>
-          </div>
-          <div class="member-blue">
-            <h4>Robbi Baskoro</h4>
-            <p class="text">Secretary of Foundation</p>
-          </div>
-        </v-flex>
-        <v-flex xs10 offset-xs1 sm4 offset-sm2 md2 offset-md1>
-          <div class="member-photo">
-            <img src="./../../assets/Ratna Dewi.jpg"/>
-          </div>
-          <div class="member-blue">
-            <h4>Ratna Dewi</h4>
-            <p class="text">Treasurer of Foundation</p>
+            <p class="text">{{profile.position}}</p>
           </div>
         </v-flex>
       </v-flex>
+
     </v-flex>
 
   </v-container>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  name: 'About'
+  name: 'About',
+  data() {
+    return {
+      profiles: [],
+    }
+  },
+  beforeMount() {
+    let { profiles } = this.$store.state;
+    let names = Object.keys(profiles);
+    let data = Object.values(profiles);
+
+    data.forEach((d, i) => {
+      let profile = d;
+      profile["route"] = `profile/${names[i]}`;
+      profile["key"] = i;
+      this.profiles.push(profile);
+    });
+  },
 }
 </script>
 
@@ -162,7 +145,6 @@ export default {
 @import 'src/assets/css/contents.scss';
 
 #about-us {
-  // margin-top: 100px;
   padding: 0px !important;
   margin-bottom: 100px;
 }

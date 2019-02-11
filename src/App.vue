@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import VueRouter from 'vue-router';
 import Home from './components/pages/Home.vue';
 import Scholars from './components/pages/Scholars.vue';
@@ -18,6 +19,29 @@ import Gallery from './components/pages/Gallery.vue';
 import Footer from './components/partials/Footer.vue';
 import Navbar from './components/partials/Navbar.vue';
 import Profile from './components/pages/Profile.vue';
+import { mapGetters, mapState } from 'vuex';
+
+let initProfileRoute = () => {
+  let url = 'http://localhost:8888/board/all';
+  let routes = {};
+
+  axios.get(url)
+  .then(response => {
+    profiles = response.data.result;
+    for(let i=0; i<profiles.length; i++) {
+      let route = profiles[i].name.toLocaleLowerCase().split(/[\s.]+/).join("-");
+      routes.push({
+        path: `profile/${route}`,
+
+      })
+    }
+  })
+  .catch(error => {
+    console.log(error);
+  })
+}
+
+let profileMap = {};
 
 const routes = [
   {path: '/', component: Home},
@@ -41,6 +65,25 @@ export default {
   components: {
     Footer,
     Navbar,
+  },
+  beforeMount() {
+    let url = 'http://localhost:8888/board/all';
+    
+    axios.get(url)
+    .then(response => {
+      let profiles = response.data.result;
+      let results = {};
+
+      profiles.forEach(p => {
+        let route = p.name.toLocaleLowerCase().split(/[\s.]+/).join("-");
+        results[route] = p;
+      });
+      this.$store.commit('setProfiles', results);
+      console.log(this.$store.state.profiles);
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
 }
 </script>

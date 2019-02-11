@@ -8,16 +8,12 @@
       <v-flex xs12 id="data">
         <v-layout row wrap>
           <v-flex md5 id="photo">
-            <!-- <img src="./../../assets/Niko Radityo.jpg"/> -->
-            <img :src="profile.photo" alt="">
+            <img :src="profile.image" alt="">
           </v-flex>
           <v-flex md7 id="text">
-            <!-- <h1>Niko Radityo</h1>
-            <h2>Chairman of Foundation</h2>
-            <p>Niko is currently the Associate Director of Fortune PR, a PR and marketing firm based in Indonesia, with vast portfolio of global technology clients such as Oracle, Linkedin, Lenovo, and many others. Prior to his current role he was Managing Editor and Technical Editor for several tech publications, including Macworld Indonesia, GameStation magazine and Gadget, as well as Business Development for WayangForce, Indonesia's first digital reader application. Niko is a Computer Science engineering grad from Universitas Parahyangan, with a strong passion of humanizing technology.</p> -->
             <h1>{{profile.name}}</h1>
             <h2>{{profile.position}}</h2>
-            <p>{{profile.desc}}</p>
+            <p>{{profile.description}}</p>
             <br>
             <a :href="profile.linkedin">
               <button-square
@@ -46,23 +42,19 @@ export default {
   data() {
     return {
       profile: {
-        name: 'Test',
-        position: 'Test Position',
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        name: '',
+        position: '',
+        description: '',
         linkedin: '',
-        photo: 'https://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg',
+        image: 'https://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg',
       }
     }
   },
   beforeMount() {
-    let url = 'to_be_replaced';
-    axios.get(url)
-    .then(response => {
-      this.profile = response.data.result;
-    })
-    .catch(error => {
-      console.log(error);
-    })
+    let name = this.$route.params.name;
+    let profile = this.$store.state.profiles;
+    console.log(profile);
+    this.profile = profile[name];
   },
 }
 </script>
@@ -106,6 +98,45 @@ export default {
       p {
         font-size: 1vw;
         line-height: 1.5vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+    #profile {
+    padding: 15vh 10vw;
+
+    #title {
+      h1 {
+        font-size: 3.5vh;
+      }
+    }
+
+    #data {
+      margin-bottom: 10vh;
+      #photo {
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      #text {
+        padding: 3vh;
+        h1 {
+          font-size: 3.5vh;
+          margin-bottom: 1vh;
+        }
+        h2 {
+          font-size: 2.5vh;
+          margin-bottom: 2.5vh;
+        }
+        p {
+          font-size: 2vh;
+          line-height: 3vh;
+        }
       }
     }
   }

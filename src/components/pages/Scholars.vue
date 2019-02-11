@@ -178,7 +178,7 @@ export default {
     };
   },
   beforeMount() {
-    let url = 'https://52c7ccbc.ngrok.io/scholar/all';
+    let url = 'http://localhost:8888/scholar/all';
     axios.get(url)
     .then(response => {
       this.scholars = response.data.result;
