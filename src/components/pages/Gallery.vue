@@ -9,7 +9,6 @@
         <div v-masonry transition-duration="0.3s" item-selector=".item" id="gallery__masonry">
           <div v-masonry-tile class="item" :key="index" v-for="(item, index) in blocks">
             <img :src="item.src" alt="">
-            <!-- <p>{{item}}</p> -->
           </div>
         </div>
       </v-flex>
@@ -22,7 +21,6 @@ export default {
   name: 'Gallery',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
       blocks: [],
     };
   },

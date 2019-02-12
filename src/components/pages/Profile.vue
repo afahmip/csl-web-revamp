@@ -53,7 +53,6 @@ export default {
   beforeMount() {
     let name = this.$route.params.name;
     let profile = this.$store.state.profiles;
-    console.log(profile);
     this.profile = profile[name];
   },
 }

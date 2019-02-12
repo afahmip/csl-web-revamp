@@ -29,7 +29,6 @@
         <v-flex xs12 class="text">
           <h2 class="content__smalltitle">Our Scholars</h2>
           <h1 class="content__title">Hall Of Fame</h1>
-          <!-- <p>Our program objectives are to create top tech-talented candidates with job opportunities where they would be able to innovate, lead, and create positive results, as well as to help to grow the local industry and society with supply of top tech-talents.</p> -->
         </v-flex>
         <v-flex xs12>
           <v-layout row wrap>
@@ -178,7 +177,7 @@ export default {
     };
   },
   beforeMount() {
-    let url = 'http://localhost:8888/scholar/all';
+    let url = `${this.$store.state.backendUrl}/scholar/all`;
     axios.get(url)
     .then(response => {
       this.scholars = response.data.result;

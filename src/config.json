@@ -1,0 +1,5 @@
+{
+  "backendUrl": "http://localhost:8888",
+  "mediumUrl": "https://medium.com/@ahmadizzan",
+  "mediumRss": "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ahmadizzan"
+}

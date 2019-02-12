@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     submit() {
-      let url = 'http://127.0.0.1:8888/scholar_app/';
+      let url = `${this.$store.state.backendUrl}/scholar_app/`;
       axios.post(url, {
         name: this.name,
         email: this.email,

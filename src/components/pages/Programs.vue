@@ -93,30 +93,6 @@
             </a>
           </v-flex>
 
-          <!-- <v-flex md6 xs12 id="program-scholarship__list">
-            <v-layout row wrap>
-              <v-flex md4 xs12>
-                <v-layout row wrap>
-                  <v-flex md12 sm4>
-                    hehe
-                  </v-flex>
-                  <v-flex md12 sm4>
-                    hehe
-                  </v-flex>
-                  <v-flex md12 sm4>
-                    hehe
-                  </v-flex>
-                </v-layout>
-              </v-flex>
-              <v-flex md8 xs12 id="click-here">
-                <a href="">
-                  <p>For application<br>information:</p>
-                  <h1>Click Here</h1>
-                </a>
-              </v-flex>
-            </v-layout>
-          </v-flex> -->
-
         </v-layout>
       </v-flex>
 

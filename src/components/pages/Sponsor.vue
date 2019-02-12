@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     submit() {
-      let url = 'http://127.0.0.1:8888/sponsor_app/';
+      let url = `${this.$store.state.backendUrl}/sponsor_app/`;
       axios.post(url, {
         name: this.name,
         position: this.position,

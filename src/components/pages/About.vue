@@ -3,7 +3,6 @@
     <v-flex id="about">
       <v-layout id="about-sec1">
           <v-flex xl4 lg4 md4 sm12 class="p0">
-            <!-- <img src="./../../assets/about-1.jpg"/> -->
             <div id="about-1"/>
           </v-flex>
           <v-flex xl8 lg8 md8 sm12 class="content">
@@ -13,7 +12,6 @@
       </v-layout>
       <v-layout id="about-sec2" row wrap>
         <v-flex xl4 lg4 md4 sm12 xs12 class="p0">
-          <!-- <img class="w25" src="./../../assets/about-2.jpg"/> -->
           <div id="about-2"/>
         </v-flex>
         <v-flex xl8 lg8 md8 sm12 xs12 class="w25" id="about-2-blue">

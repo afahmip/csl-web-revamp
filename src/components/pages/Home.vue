@@ -55,19 +55,11 @@
                   <h1>{{article.title}}</h1>
                 </a>
                 <h2>{{article.date}}</h2>
-                <!-- <div class="news__categories">
-                  <div
-                    v-for="cat in article.categories"
-                    :key="cat"
-                  >
-                    {{cat}}
-                  </div>
-                </div> -->
               </div>
             </v-flex>
             <v-flex md5 sm12 id="medium">
               <p>
-                More on our <a href="https://medium.com/@ahmadizzan">Medium</a>
+                More on our <a :href="this.$store.state.mediumUrl">Medium</a>
               </p>
             </v-flex>
           </v-layout>
@@ -165,7 +157,7 @@ export default {
     }
   },
   created() {
-    let url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ahmadizzan";
+    let url = this.$store.state.mediumRss;
     axios.get(url)
     .then(response => {
       this.parseArticle(response.data.items);
