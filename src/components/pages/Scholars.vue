@@ -15,6 +15,7 @@
                 text="Know More"
                 color="rgb(6, 88, 196)"
                 hover="rgb(5, 112, 251)"
+                v-scroll-to="'#hall-of-fame'"
                 big="true"
               />
             </div>
@@ -34,10 +35,10 @@
           <v-layout row wrap>
             <v-flex xs12 class="hall-item">
               <v-layout row wrap>
-                <v-flex sm4 class="program-photo">
+                <v-flex md4 class="program-photo">
                   <img src="./../../assets/hall/turfa.jpg" alt="">
                 </v-flex>
-                <v-flex sm8 class="program-content">
+                <v-flex md8 class="program-content">
                   <h2>Turfa Auliarachman won the 3rd place ICPC 2017!</h2>
                   <p>ICPC (International Collegiate Programming Contest) is a competitive programming competition held by UGM. It’s part of UGM Vocomfest event, which is held annually. We are happy to inform that Turfa Auliarachman won the 3rd place in the competition. We hope that our scholars will be encouraged to achieve even more. Congratulation Turfa!</p>
                 </v-flex>
@@ -45,10 +46,10 @@
             </v-flex>
             <v-flex xs12 class="hall-item">
               <v-layout row wrap>
-                <v-flex sm4 class="program-photo">
+                <v-flex md4 class="program-photo">
                   <!-- <img src="./../../assets/women.jpg" alt=""> -->
                 </v-flex>
-                <v-flex sm8 class="program-content">
+                <v-flex md8 class="program-content">
                   <h2>Fahmi and the team from UI won 2nd place in Google Games Southeast Asia 2017</h2>
                   <p>Google Games is a fun mission-based event as teams from different schools go head to head in mind-twisting activities like solving coding problems and puzzle competitions.</p>
                 </v-flex>
@@ -56,10 +57,10 @@
             </v-flex>
             <v-flex xs12 class="hall-item">
               <v-layout row wrap>
-                <v-flex sm4 class="program-photo">
+                <v-flex md4 class="program-photo">
                   <!-- <img src="./../../assets/hall/Valentina.png" alt=""> -->
                 </v-flex>
-                <v-flex sm8 class="program-content">
+                <v-flex md8 class="program-content">
                   <h2>Valentina Kania won the 1st place in Google Games Southeast Asia 2017</h2>
                   <p>Valentina Kania (Awardee 2015) and her team-mates from UI won the 1st place in Side Mission Category</p>
                 </v-flex>
@@ -67,10 +68,10 @@
             </v-flex>
             <v-flex xs12 class="hall-item">
               <v-layout row wrap>
-                <v-flex sm4 class="program-photo">
+                <v-flex md4 class="program-photo">
                   <img src="./../../assets/hall/annisa.jpg" alt="">
                 </v-flex>
-                <v-flex sm8 class="program-content">
+                <v-flex md8 class="program-content">
                   <h2>Annisa Nurul Azhar Participated in "Mobile App Development Competition" 2017</h2>
                   <p>Annisa Nurul Azhar (Awardee 2015) with her team from ITB participated in "Mobile App Development Competition" held by Telkom University and got into top 8 rank in this competition.</p>
                 </v-flex>
@@ -382,6 +383,22 @@ html, body {
   }
 }
 
+@media screen and (max-width: 1025px) {
+  #scholar-list {
+    padding-bottom: 5vh;
+    .item {
+      .data {
+        h1 {
+          font-size: 2vh;
+        }
+        h2, p {
+          font-size: 2vh;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   #modal {
     #modal__content {
@@ -480,7 +497,7 @@ html, body {
   #scholar-list {
     padding: 0 10vw 10vh 10vw;
     .item {
-      height: 33vh;
+      min-height: 33vh;
       width: 38vw;
       .data {
         h1 {

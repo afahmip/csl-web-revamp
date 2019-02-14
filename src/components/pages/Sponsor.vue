@@ -143,6 +143,31 @@ export default {
   }
 }
 
+@media screen and (max-width: 1025px) {
+  #sponsor {
+
+    #jumbotron, #form {
+
+      h1 {
+        font-size: 3vw;
+      }
+      p {
+        font-size: 1.5vw;
+      }
+    }
+
+    #jumbotron {
+      padding-bottom: 10vh;
+      ul {
+        li {
+          font-size: 1.5vw;
+        }
+      }
+    }
+
+  }
+}
+
 @media screen and (max-width: 768px) {
   #sponsor {
 

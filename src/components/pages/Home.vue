@@ -59,7 +59,7 @@
             </v-flex>
             <v-flex md5 sm12 id="medium">
               <p>
-                More on our <a :href="this.$store.state.mediumUrl">Medium</a>
+                More on our <router-link to="this.$store.state.mediumUrl">Medium</router-link>
               </p>
             </v-flex>
           </v-layout>
