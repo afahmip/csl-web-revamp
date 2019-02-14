@@ -2,9 +2,9 @@
   <div id="navbar">
     <v-toolbar fixed clipped-left>
       <v-toolbar-title>
-        <a href="/">
+        <router-link to="/">
           <img src="./../../assets/csl-navbar.png" alt="">
-        </a>
+        </router-link>
       </v-toolbar-title>
       
       <v-spacer></v-spacer>

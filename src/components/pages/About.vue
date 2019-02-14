@@ -101,9 +101,9 @@
             <img :src="profile.image"/>
           </div>
           <div class="member-blue">
-            <a :href="profile.route">
+            <router-link to="profile.route">
               <h4>{{profile.name}}</h4>
-            </a>
+            </router-link>
             <p class="text">{{profile.position}}</p>
           </div>
         </v-flex>

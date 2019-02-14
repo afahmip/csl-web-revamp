@@ -8,22 +8,22 @@
           </transition>
           <p>A four-year scholarship and leadership development program for computer science undergraduate.</p>
           <div id="btn-place">
-            <a href="programs">
+            <router-link to="programs">
               <button-square
                 text="About Program"
                 color="#000"
                 hover="#fff"
                 medium="true"
               />
-            </a>
-            <a href="apply">
+            </router-link>
+            <router-link to="apply">
               <button-square
                 text="Apply Now!"
                 color="#000"
                 hover="#fff"
                 medium="true"
               />
-            </a>
+            </router-link>
           </div>
         </div>
         <v-layout row wrap>
@@ -51,9 +51,9 @@
                 <img :src="article.thumbnail" alt="">
               </div>
               <div class="news-content">
-                <a :href="article.link">
+                <router-link to="article.link">
                   <h1>{{article.title}}</h1>
-                </a>
+                </router-link>
                 <h2>{{article.date}}</h2>
               </div>
             </v-flex>
@@ -77,14 +77,14 @@
               <h1 class="content__title">About CSLeaders</h1>
               <p><b>Computer Science Leaders Scholarship (CS Leaders)</b> was first launched in 2015, The scholarship aims to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education.
               </p>
-              <a href="about-us">
+              <router-link to="about-us">
                 <button-square
                   text="Know More"
                   color="#000"
                   hover="#fff"
                   medium="true"
                 />
-              </a>
+              </router-link>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -119,20 +119,20 @@
           <v-layout row wrap>
             <v-flex md7 xs12 class="text">
               <h1>Let's Join & Be Part of Us!</h1>
-              <a href="/apply#form">
+              <router-link to="/router-linkpply#form">
                 <button-square
                   text="Apply Now!"
                   color="rgb(6, 88, 196)"
                   hover="#fff"
                   big="true"
                 />
-              </a>
+              </router-link>
             </v-flex>
             <v-flex md5 xs12 id="click-here">
-              <a href="/apply#info">
+              <router-link to="/router-linkpply#info">
                 <p>For application<br>information:</p>
                 <h1>Click Here</h1>
-              </a>
+              </router-link>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -378,8 +378,96 @@ h1 {
   text-align: center;
 }
 
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media screen and (max-width: 1025px) {
+
+  #news {
+    .news__article {
+      height: 40vh;
+      padding: 0;
+
+      .news-image {
+        height: 55%;
+      }
+
+      .news-content {
+        padding: 2rem;
+
+        h1 {
+          font-size: 2vh;
+          margin-bottom: 10px;
+        }
+        h2 {
+          font-size: 1.5vh;
+          margin-bottom: 20px;
+        }
+      }
+
+      .news__categories {
+        display: flex;
+        flex-direction: row;
+
+        >div {
+          padding: 10px 15px;
+          margin-right: 4px;
+          border-radius: 5px;
+        }
+      }
+    }
+    #medium {
+      margin: 0;
+      p {
+        font-size: 3vh;
+      }
+    }
+  }
+
+  #content {
+    p, li {
+      font-size: 1.3vw;
+      line-height: 2.3vw;
+    }
+    #content__scholarship {
+      p {
+        font-size: 1.3vw;
+        line-height: 2.3vw;
+      }
+      .scholarship-item {
+        margin-bottom: 3vh;
+        padding: 2rem;
+        h1 {
+          font-size: 5vw;
+        }
+        h2 {
+          font-size: 1.7vw;
+        }
+        p {
+          font-size: 1.3vw;
+        }
+      }
+    }
+    #content__join {
+      #click-here {
+        p {
+          font-size: 1.5vw;
+          line-height: 3.5vh;
+        }
+        h1 {
+          font-size: 3.5vw;
+        }
+      }
+    }
+  }
+}
+
+
 @media screen and (max-width: 768px) {
-  #jumbotron {
+
+   #jumbotron {
     #jumbotron__content {
       padding: 0;
       text-align: center;
@@ -403,6 +491,11 @@ h1 {
         background-color: white !important;
       }
     }
+  }
+
+  #btn-place {
+    display: flex;
+    flex-direction: column;
   }
 
   #btn-place {
@@ -437,23 +530,9 @@ h1 {
           margin-bottom: 20px;
         }
       }
-
-      .news__categories {
-        display: flex;
-        flex-direction: row;
-
-        >div {
-          padding: 10px 15px;
-          margin-right: 4px;
-          border-radius: 5px;
-        }
-      }
     }
     #medium {
       margin: 8vh 10vw;
-      p {
-        font-size: 3vh;
-      }
     }
   }
 
@@ -471,6 +550,10 @@ h1 {
     }
     #content__scholarship {
       padding: 0 12vw 10vh 12vw;
+      p {
+        font-size: 2vh;
+        line-height: 2.7vh;
+      }
       .scholarship-item {
         margin-bottom: 3vh;
         padding: 2rem;

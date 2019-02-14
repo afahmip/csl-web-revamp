@@ -31,6 +31,20 @@ a {
   margin: 10vh 0 5vh 0;
 }
 
+@media screen and (max-width: 1025px) {
+  .content__title {
+    font-size: 3vw;
+  }
+
+  .content__smalltitle {
+    font-size: 1.5vw;
+  }
+
+  .content__subtitle {
+    font-size: 3vh;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .content__title {
     font-size: 4vh;

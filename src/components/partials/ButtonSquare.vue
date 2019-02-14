@@ -77,6 +77,29 @@ export default {
   }
 }
 
+@media screen and (max-width: 1025px) {
+  .btn-square.btn-big {
+    p {
+      font-size: 2.5vw;
+      margin: 4vh 6vw;
+    }
+  }
+
+  .btn-square.btn-med {
+    p {
+      font-size: 1.5vw;
+      margin: 3vh auto;
+    }
+  }
+
+  .btn-square.btn-sm {
+    p {
+      font-size: 0.85vw;
+      margin: 1.5vh auto;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .btn-square.btn-big {
     p {
