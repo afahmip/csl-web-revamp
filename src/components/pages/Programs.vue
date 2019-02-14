@@ -233,6 +233,65 @@ export default {
   }
 }
 
+@media screen and (max-width: 1025px) {
+
+  #programs__jumbotron {
+    #content {
+      #content__block {
+        display: none;
+      }
+      #text {
+        color: black;
+        h1 {
+          font-size: 4.3vh;
+        }
+        p {
+          font-size: 2vh;
+          line-height: 3vh;
+        }
+      }
+    }
+  }
+
+  #our-program {
+    p {
+      font-size: 1.3vw;
+      line-height: 2.3vw;
+    }
+
+    .program-item {
+      h1 {
+        font-size: 6vh;
+        padding: 2vh 3vw;
+      }
+      h2 {
+        font-size: 3vh;
+        padding: 0 3vw;
+      }
+      p {
+        font-size: 1.3vw;
+        padding: 0 3vw;
+      }
+    }
+  }
+
+  #program-scholarship {
+    p {
+      font-size: 1.3vw;
+      line-height: 2.3vw;
+    }
+    #click-here {
+      p {
+        font-size: 1.5vw;
+        line-height: 3.5vh;
+      }
+      h1 {
+        font-size: 3.5vw;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   #programs__jumbotron {
     #content {
@@ -293,6 +352,7 @@ export default {
 
     p {
       font-size: 2vh;
+      line-height: 2.5vh;
     }
 
     .text {
