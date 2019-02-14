@@ -157,6 +157,44 @@ export default {
   }
 }
 
+@media screen and (max-width: 1025px) {
+  #apply {
+
+    #info {
+      h1 {
+        font-size: 4vh;
+      }
+      .content__list {
+        padding-right: 4rem;
+        font-size: 1.5vw;
+        
+        .list-title {
+          font-size: 2.7vh;
+        }
+      }
+    }
+
+    #form {
+      padding: 0 10vw 10vh 10vw;
+
+      p {
+        font-size: 2vh;
+      }
+
+      #form__apply {
+        padding: 2rem;
+        background-color: white;
+
+        button {
+          background-color: $blue;
+          color: white;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   #apply {
 
