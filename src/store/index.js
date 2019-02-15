@@ -11,6 +11,7 @@ export default new Vuex.Store({
     backendUrl: config.backendUrl,
     mediumUrl: config.mediumUrl,
     mediumRss: config.mediumRss,
+    mapsUrl: config.mapsUrl,
   },
   plugins: [createPersistedState()],
   getters: {
