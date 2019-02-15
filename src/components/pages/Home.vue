@@ -464,10 +464,68 @@ h1 {
   }
 }
 
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
 
-@media screen and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 823px) {
+  #jumbotron {
+    #jumbotron__img {
+      img {
+        margin: 0 -48vw;
+      }
+    }
+  }
+}
 
-   #jumbotron {
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  
+  #jumbotron {
+    #jumbotron__content {
+      padding: 0;
+      text-align: center;
+      padding-right: 10vw;
+      padding-left: 10vw;
+      
+      h1 {
+        font-size: 4.3vh;
+        color: white;
+      }
+      p {
+        font-size: 2.5vh;
+        color: white;
+      }
+      .btn-square {
+        border: 2px solid white !important;
+        color: white !important;
+      }
+      .btn-square:hover {
+        color: black !important;
+        background-color: white !important;
+      }
+    }
+    #jumbotron__img {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  #jumbotron {
     #jumbotron__content {
       padding: 0;
       text-align: center;
@@ -492,6 +550,10 @@ h1 {
       }
     }
   }
+  
+}
+
+@media screen and (max-width: 768px) {
 
   #btn-place {
     display: flex;
