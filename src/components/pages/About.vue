@@ -1,20 +1,21 @@
 <template>
-  <v-container fluid grid-list-md id="about-us">
+  <v-container fluid id="about-us">
+    
     <v-flex id="about">
-      <v-layout id="about-sec1">
-          <v-flex xl4 lg4 md4 sm12 class="p0">
-            <div id="about-1"/>
-          </v-flex>
-          <v-flex xl8 lg8 md8 sm12 class="content">
-            <h1>About Us</h1>
-            <p>'I am member of a team, and I rely on the team. I defer to it and sacrifice for it, because the team, not the individual, is the ultimate champion.' - Mia Hamm</p>
-          </v-flex>
-      </v-layout>
-      <v-layout id="about-sec2" row wrap>
-        <v-flex xl4 lg4 md4 sm12 xs12 class="p0">
-          <div id="about-2"/>
+      <v-layout row wrap id="about-jumbotron">
+        <v-flex lg5 md5 sm12>
+          <v-layout row wrap id="jumbo-image">
+            <v-flex md12 class="about__img">
+              <img src="./../../assets/about-1.jpg" alt="">
+            </v-flex>
+            <v-flex md12 class="about__img">
+              <img src="./../../assets/about-2.jpg" alt="">
+            </v-flex>
+          </v-layout>
         </v-flex>
-        <v-flex xl8 lg8 md8 sm12 xs12 class="w25" id="about-2-blue">
+        <v-flex lg7 md7 sm12 class="content">
+          <h1>About Us</h1>
+          <p>'I am member of a team, and I rely on the team. I defer to it and sacrifice for it, because the team, not the individual, is the ultimate champion.' - Mia Hamm</p>
         </v-flex>
       </v-layout>
     </v-flex>
@@ -22,13 +23,13 @@
     <v-flex id=initiator>
       <v-layout row wrap>
         <v-flex md5 sm12 xs12 id="initiator-profile">
-            <div id="initiator-photo">
-              <img src="./../../assets/Peng T. Ong.jpg"/>
-            </div>
-            <div id="initiator-blue">
-              <h3>Peng T. Ong</h3>
-              <h4>Program Initiator</h4>
-            </div>
+          <div id="initiator-photo">
+            <img src="./../../assets/Peng T. Ong.jpg"/>
+          </div>
+          <div id="initiator-blue">
+            <h3>Peng T. Ong</h3>
+            <h4>Program Initiator</h4>
+          </div>
         </v-flex>
         <v-flex md7 sm12 xs12 id="initiator-wrapper">
           <div class="message">
@@ -43,52 +44,62 @@
     </v-flex>
 
     <v-flex id="journey">
-        <v-flex md8 sm8 xs12 id="journey-wrapper">
-          <div class="message">
-            <h4 class="blue-font">About Our Journey</h4>
-            <p class="text"><b>Computer Science Leaders Scholarship (CS Leaders)</b> was first launched in 2015, The scholarship aims to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education. <br>
-            <br>It also aims to provide the <b>top talented candidates with job opportunities</b> where they would be able to innovate, lead, and create positive results, as well as to help to grow the local industry with supply of top talents. <br>
-            <br><b>CS Leaders</b> is a program initiated and operated by a non-profit foundation: <b>Nithya Bhaskara Widya</b>, which was established as a legal entity in 2014. A four-year scholarship and leadership development program for computer science undergraduate at <b>University of Indonesia (UI)</b> and <b>Bandung Institute of Technology (ITB)</b>. <br>
-            <br><b>We focus on Computer Science</b> this because Indonesia requires computer science skills to drive forward the country’s financial condition to be able to improve the welfare of the people, and <b>Computer Science is one of the 14 subsectors</b> that has been a focus of the government in their effort of growing the Indonesian economic. <br> </p>
-          </div> 
+      <v-layout row wrap>
+        <v-flex md8 sm12 id="journey-wrapper">
+          <h1 class="content__smalltitle">About Us</h1>
+          <h1 class="content__title">About Our Journey</h1>
+          <p class="text"><b>Computer Science Leaders Scholarship (CS Leaders)</b> was first launched in 2015, The scholarship aims to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education. <br>
+          <br>It also aims to provide the <b>top talented candidates with job opportunities</b> where they would be able to innovate, lead, and create positive results, as well as to help to grow the local industry with supply of top talents. <br>
+          <br><b>CS Leaders</b> is a program initiated and operated by a non-profit foundation: <b>Nithya Bhaskara Widya</b>, which was established as a legal entity in 2014. A four-year scholarship and leadership development program for computer science undergraduate at <b>University of Indonesia (UI)</b> and <b>Bandung Institute of Technology (ITB)</b>. <br>
+          <br><b>We focus on Computer Science</b> this because Indonesia requires computer science skills to drive forward the country’s financial condition to be able to improve the welfare of the people, and <b>Computer Science is one of the 14 subsectors</b> that has been a focus of the government in their effort of growing the Indonesian economic. <br> </p>
         </v-flex>
-        <v-flex md4 sm4>
-          <img xs6 src="./../../assets/journey-1.jpg" class="journey-img"/>
-          <img xs6 src="./../../assets/journey-2.jpg" class="journey-img"/>
+        <v-flex md4 sm12 id="journey-img__placeholder">
+          <v-layout row wrap>
+            <v-flex lg12 class="journey-img">
+              <img src="./../../assets/journey-1.jpg"/>
+            </v-flex>
+            <v-flex lg12 class="journey-img">
+              <img src="./../../assets/journey-2.jpg"/>
+            </v-flex>
+          </v-layout>
         </v-flex>
+      </v-layout>
     </v-flex>
 
     <v-flex id="mission">
       <v-layout row>
-        <div class="message">
-          <h4 class="blue-font">Our Mission</h4>
+        <div>
+          <h1 class="content__smalltitle">About Us</h1>
+          <h1 class="content__title">Our Mission</h1>
         </div>
       </v-layout>
-      <v-flex id="mission-1" xs12 sm6 md6 lg6>
-        <img src="./../../assets/mission-1.jpg">
-        <div class="mission-text">
-          <h4>To Society &amp; Country </h4> 
-          <h5>We aim to drive forward the country by improving the quality and quantity of talented individuals in Computer Science field of study that will be able to develop the ICT Industry. <br></h5>
-        </div>
-      </v-flex>
-      <v-flex id="mission-2" xs12 sm6 md6 lg6>
-        <img src="./../../assets/mission-2.jpg">
-        <div class="mission-text">
-          <h4>For Partners &amp; Industry </h4>
-          <h5>Help the tech industry grow through top talent acquisitions to enable businesses create new innovations that can help solve various problems that people face every day <br></h5>
-        </div>
-      </v-flex>
+      <v-layout row wrap>
+        <v-flex class="mission-div" xs12 sm12 md6 lg6>
+          <div class="mission-img">
+            <img src="./../../assets/mission-1.jpg">
+          </div>
+          <div class="mission-text">
+            <h4>To Society &amp; Country </h4> 
+            <p>We aim to drive forward the country by improving the quality and quantity of talented individuals in Computer Science field of study that will be able to develop the ICT Industry. <br></p>
+          </div>
+        </v-flex>
+        <v-flex class="mission-div" xs12 sm12 md6 lg6>
+          <div class="mission-img">
+            <img src="./../../assets/mission-2.jpg">
+          </div>
+          <div class="mission-text">
+            <h4>For Partners &amp; Industry </h4>
+            <p>Help the tech industry grow through top talent acquisitions to enable businesses create new innovations that can help solve various problems that people face every day <br></p>
+          </div>
+        </v-flex>
+      </v-layout>
     </v-flex>
 
     <v-flex id="team">
-
-      <v-layout row>
-        <div class="message">
-          <h4 class="blue-font">The Team Behind CSLeaders</h4>
-          <h2>Our Board of Members</h2>
-        </div>
-      </v-layout>
-
+      <v-flex id="team-title">
+        <h1 class="content__smalltitle">The Team Behind CS Leaders</h1>
+        <h1 class="content__title">Our Board of Members</h1>
+      </v-flex>
       <v-flex class="member-holder">
         <v-flex
           xs10 offset-xs1 sm4 offset-sm1 md2
@@ -101,14 +112,13 @@
             <img :src="profile.image"/>
           </div>
           <div class="member-blue">
-            <router-link to="profile.route">
-              <h4>{{profile.name}}</h4>
+            <router-link :to="profile.route">
+              <h4 class="member-name">{{profile.name}}</h4>
             </router-link>
-            <p class="text">{{profile.position}}</p>
+            <p class="text member-position">{{profile.position}}</p>
           </div>
         </v-flex>
       </v-flex>
-
     </v-flex>
 
   </v-container>
@@ -147,44 +157,8 @@ export default {
   margin-bottom: 100px;
 }
 
-.p0 {
-  padding: 0px !important;
-}
-
 .blue-font {
   color: $blue;
-}
-
-.flex {
-  display: inline-block;
-  vertical-align: top;
-}
-
-h1 {
-  font-size: 3.5vw;
-  color: black;
-  padding-bottom: 2vh;
-}
-
-h2 {
-  font-size: 3vw;
-  color: black;
-  padding-bottom: 2vh;
-}
-
-h3 {
-  font-size: 2.5vw;
-  padding-bottom: 2vh;
-}
-
-h4 {
-  font-size: 1.5vw;
-  padding-bottom: 2vh;
-}
-
-h5 {
-  font-size: 1.2vw;
-  padding-bottom: 2vh;
 }
 
 .text {
@@ -192,76 +166,70 @@ h5 {
   margin: 0px !important;
 }
 
-.content {
-  height: 100%;
-  padding-top: 10vh  !important;
-  vertical-align: middle;
-  padding-left: 5vw !important;
-  padding-right: 15vw !important;
-  padding-bottom: 5vw !important;
-}
-
-.content p {
-  font-size: 1.5vw;
-}
-
 #about {
   padding-top: 10vh;
   height: 100vh;
-}
-
-#about-1 {
-  background: url('./../../assets/about-1.jpg') no-repeat center;
-  background-size: 100% auto;
-  height: 100%;
-}
-
-#about-sec2 {
-  height: 40%;
-}
-
-#about-2 {
-  background: url('./../../assets/about-2.jpg') no-repeat center;
-  background-size: 100% auto; 
-  height: 100%;
-}
-
-#about-2-blue {
-  height: 100%;
-  background-color: #08065a;
-  background-size: 100% auto;
-  background-position: 50% 90%;
-}
-
-#initiator {
-  padding-left: 20vw;
-  padding-right: 20vw;
-  padding-top: 15vh;
-  width: 120vw;
-  height: 100%;
-}
-
-#initiator-profile {
-  color: white;
-  padding: 0;
-}
-
-#initiator-photo {
-  height: 70%;
-  overflow: hidden;
-  img {
+  #about-jumbotron {
     height: 100%;
+    overflow: hidden;
+    #jumbo-image {
+      height: 100%;
+      .about__img {
+        overflow: hidden;
+        padding: 0 !important;
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .content {
+      padding: 20vh 15vw 5vw 5vw !important;
+      p {
+        font-size: 1.5vw;
+      }
+      h1 {
+        font-size: 3vw;
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
 
-#initiator-blue {
-  padding: 2vw;
-  height: 30%;
-  background-color: $blue;
-}
-
-#initiator-wrapper {
-  background-color: #ECF7FD;
+#initiator {
+  padding: 10vh 20vw;
+  #initiator-profile {
+    color: white;
+    padding: 0;
+  }
+  #initiator-photo {
+    height: 70%;
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
+  }
+  #initiator-blue {
+    padding: 3vw;
+    height: 30%;
+    background-color: $blue;
+    h3 {
+      font-size: 2vw;
+      margin-bottom: 0.5rem;
+    }
+    h4 {
+      font-size: 1.2vw;
+      font-weight: normal;
+    }
+  }
+  #initiator-wrapper {
+    background-color: #ECF7FD;
+    h4 {
+      font-size: 1.5vw;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .message {
@@ -271,169 +239,230 @@ h5 {
 
 #journey {
   padding-top: 10vh;
-}
-
-#journey-wrapper {
-  display: inline-block;
-  padding-left: 20vw;
-  padding-right: 5vw;
-  height: auto;
+  #journey-wrapper {
+    padding: 5vh 5vw 15vh 20vw;
+    height: auto;
+  }
+  #journey-img__placeholder {
+    height: 100%;
+    .journey-img {
+      padding: 0 !important;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 #mission {
   background-color: #e2e2e2;
-  width: 100%;
-  padding-bottom: 10vh;
-}
-
-#mission .message, #team .message {
-  padding-left: 5vw !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 1vw;
-}
-
-#mission-1, #mission-2 {
-  width: 100%;
-  height: auto;
-  max-height: 35vh;
-  // max-width: 767px;
-  background-size: 100% auto;
-  // padding-right: 2.5vw !important;
-  color: white;
-  position: relative;
-  text-align: center;
-  padding: 5vw;
-  padding-top: 0;
-}
-
-@media (min-width: 1264px) {
-    
-  #mission-1 {
-    padding-right: 2.5vw;
+  padding: 10vh 15vw;
+  .mission-div {
+    padding-right: 5vw;
+    padding-top: 2vh;
+    .mission-img {
+      height: 50%;
+      overflow: hidden;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .mission-text {
+      padding: 2rem;
+      background-color: white;
+      p {
+        margin-top: 1rem;
+        font-size: 1vw;
+      }
+    }
   }
-
-  #mission-2 {
-    padding-left: 2.5vw;
-  }
-
-}
-
-#mission-1 img, #mission-2 img {
-  filter: brightness(60%);
-  width: 100%;
-  max-height: 30vh;
-  object-fit: cover;
 }
 
 #team {
   padding-top: 10vh;
-}
-
-.member-holder {
-  color: white;
-  padding-bottom: 4vw;
-
-  a {
-    text-decoration: none;
+  #team-title {
+    padding: 5vh 15vw;
+  }
+  .member-holder {
     color: white;
+    padding-bottom: 4vw;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    div {
+      display: inline-block;
+      margin-bottom: 1vh;
+    }
   }
-}
 
-.member-holder div {
-  display: inline-block;
-  margin-bottom: 1vh;
-}
-
-.member-photo {
-  height: 30vh;
-  width: 100%;
-  overflow: hidden;
-  margin: 0 !important;
-}
-
-.member-photo img {
-  position: relative;
-  width: 100%;
-  height: auto;
-  top: -1.5rem;
-}
-
-@media (min-width: 600px) and (max-width: 960px) {
   .member-photo {
-    height: 25vh;
+    height: 30vh;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 !important;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
-  .member-photo img {
-    top: -1rem;
+  .member-blue {
+    padding: 2vw;
+    height: calc(5vw + 5vh);
+    width: 100%;
+    background-color: #08065a;
+
+    .member-name {
+      font-size: 1.2vw;
+      margin-bottom: 0.5rem;
+    }
+    .member-position {
+      font-size: 0.8vw;
+    }
   }
 }
 
+.mission-text {
+  h4 {
+    font-size: 1.5vw;
+  }
+}
 
-@media (max-width: 599px) {
+@media screen and (max-width: 1023px) {
+  #about {
+    padding-top: 10vh;
+    height: 100vh;
+    #about-jumbotron {
+      flex-direction: column-reverse;
+      >div {
+        flex-basis: 0;
+      }
+      #jumbo-image {
+        height: 30%;
+        >div:last-child {
+          display: none;
+        }
+      }
+      .content {
+        margin-bottom: 5vh;
+        padding: 0 10vw 5vw 10vw !important;
+        h1 {
+          font-size: 4.3vh;
+        }
+        p {
+          font-size: 2vh;
+          line-height: 3vh;
+        }
+      }
+    }
+  }
+  
+  #journey {
+    padding-top: 10vh;
+    #journey-wrapper {
+      padding: 10vh 10vw;
+      height: auto;
+    }
+    .journey-img {
+      width: 100%;
+      height: 30vh;
+    }
+  }
+
+  #initiator {
+    padding: 10vh 20vw;
+    #initiator-profile {
+      color: white;
+      padding: 0;
+    }
+    #initiator-photo {
+      height: 70%;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
+    }
+    #initiator-blue {
+      padding: 5vh 8vw 0 8vw;
+      h3 {
+        font-size: 4vh;
+        margin-bottom: 0.5rem;
+      }
+      h4 {
+        font-size: 2.5vh;
+        font-weight: normal;
+      }
+    }
+    #initiator-wrapper {
+      padding: 3vh 5vw;
+      h4 {
+        font-size: 1.5vw;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #about {
+    #about-jumbotron {
+      >div {
+        flex-basis: 1;
+      }
+      .content {
+        margin-bottom: 0;
+        padding: 10vh 10vw 5vw 10vw !important;
+      }
+    }
+  }
+
   .member-photo {
     height: 60vw;
   }
-}
 
-.member-blue {
-  padding: 1.5vw;
-  height: calc(5vw + 5vh);
-  width: 100%;
-  background-color: #08065a;
-}
-
-@media (min-width: 768px) {
-  .mission-text {
-    position: absolute;
-    top: 15%;
-    bottom: 25%;
-    left: 25%;
-    right: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  #about {
-    height: 70vh;
-  }
-  h1 {
-    font-size: 3.5vh;
-    color: black;
-    padding-bottom: 2vh;
+  p {
+    font-size: 1.3rem !important;
   }
 
-  h2 {
-    font-size: 3vh;
-    color: black;
-    padding-bottom: 2vh;
+  #journey {
+    >div:last-child > img:last-child {
+      display: none;
+    }
   }
 
-  h3 {
-    font-size: 2.5vh;
-    padding-bottom: 2vh;
+  #journey-wrapper {
+    padding: 5vh 10vw;
   }
 
-  h4 {
-    font-size: 1.5vh;
-    padding-bottom: 2vh;
+  #initiator-blue {
+    h3 {
+      font-size: 3.5vh;
+      margin-bottom: 0.5rem;
+    }
+    h4 {
+      font-size: 2vh;
+    }
   }
 
-  h5 {
-    font-size: 1.2vh;
-    padding-bottom: 2vh;
+  .message {
+    h4 {
+      font-size: 2.5vh !important;
+    }
   }
 
-  .content p {
-    font-size: 1.5vh;
-  } 
-  .content {
-    height: 100%;
-    padding-top: 5vh  !important;
-    vertical-align: middle;
-    padding-left: 10vw !important;
-    padding-right: 10vw !important;
-    padding-bottom: 5vw !important;
+  #team {
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
+
   #initiator {
     padding-left: 10vw;
     padding-right: 10vw;
@@ -456,28 +485,53 @@ h5 {
     height: auto;
     padding-bottom: 5vw;
   }
-  .mission-text {
-    position: absolute;
-    top: 10%;
-    bottom: 25%;
-    left: 25%;
-    right: 25%;
-  }
-  #mission-1 > img, #mission-2 > img {
-    max-height: 20vh;
-  }
   #mission {
     background-color: #e2e2e2;
     width: 100%;
-    padding-bottom: 2vh;
-    padding-top: 2vh;
+    padding: 5vh 10vw;
   }
   .text {
     font-size: 1.5vh;
   }
-  #about-2-blue {
-    display: none;
+  .mission-text {
+    h4 {
+      font-size: 2.3vh;
+    }
   }
+
+  #team {
+    #team-title {
+      padding: 5vh 10vw;
+    }
+    .member-holder {
+      div {
+        display: inline-block;
+        margin-bottom: 1vh;
+      }
+    }
+
+    .member-photo {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .member-blue {
+      height: auto;
+      padding: 2rem;
+      .member-name {
+        font-size: 2.5vh;
+      }
+      .member-position {
+        font-size: 1.5vh;
+      }
+    }
+  }
+
+  // .message {
+  //   padding-left: 10vw;
+  // }
 }
 </style>
-
