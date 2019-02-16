@@ -120,7 +120,7 @@ export default {
 
   #csl-logo {
     img {
-      width: 40vw;
+      // width: 40vw;
     }
   }
 

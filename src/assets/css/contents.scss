@@ -1,5 +1,12 @@
 $blue: rgb(6, 88, 196);
 
+body {
+  p {
+    // font-size: 1.3em !important;
+    // line-height: 1.375em !important;
+  }
+}
+
 .content__title {
   font-size: 1.8vw;
   color: rgb(44, 44, 44);
@@ -47,6 +54,27 @@ a {
   .content__subtitle {
     font-size: 3vh;
   }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .content__title {
+    font-size: 4vh;
+  }
+
+  .content__smalltitle {
+    font-size: 2vw;
+  }
+
+  .content__subtitle {
+    font-size: 3vh;
+  }
+  
 }
 
 @media screen and (max-width: 768px) {

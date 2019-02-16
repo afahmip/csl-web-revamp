@@ -3,7 +3,7 @@
     
     <v-flex id="about">
       <v-layout row wrap id="about-jumbotron">
-        <v-flex lg5 md5 sm12>
+        <v-flex lg5 md5 sm5 xs12>
           <v-layout row wrap id="jumbo-image">
             <v-flex md12 class="about__img">
               <img src="./../../assets/about-1.jpg" alt="">
@@ -13,7 +13,7 @@
             </v-flex>
           </v-layout>
         </v-flex>
-        <v-flex lg7 md7 sm12 class="content">
+        <v-flex lg7 md7 sm7 xs12 class="content">
           <h1>About Us</h1>
           <p>'I am member of a team, and I rely on the team. I defer to it and sacrifice for it, because the team, not the individual, is the ultimate champion.' - Mia Hamm</p>
         </v-flex>
@@ -22,7 +22,7 @@
 
     <v-flex id=initiator>
       <v-layout row wrap>
-        <v-flex md5 sm12 xs12 id="initiator-profile">
+        <v-flex md5 sm5 xs12 id="initiator-profile">
           <div id="initiator-photo">
             <img src="./../../assets/Peng T. Ong.jpg"/>
           </div>
@@ -31,7 +31,7 @@
             <h4>Program Initiator</h4>
           </div>
         </v-flex>
-        <v-flex md7 sm12 xs12 id="initiator-wrapper">
+        <v-flex md7 sm7 xs12 id="initiator-wrapper">
           <div class="message">
             <h4 class="blue-font">Message from The Initiator</h4>
             <p class="text">Since the program first launched in 2015, The Computer Science Leaders Scholarship (CSLS) Program remains grounded in our mission to drive forward the country by improving the quality and quantity of talented individuals in Computer Science field. <br>
@@ -185,7 +185,7 @@ export default {
       }
     }
     .content {
-      padding: 20vh 15vw 5vw 5vw !important;
+      padding: 20vh 15vw 5vw 5vw;
       p {
         font-size: 1.5vw;
       }
@@ -336,7 +336,72 @@ export default {
   }
 }
 
-@media screen and (max-width: 1023px) {
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 823px) and (orientation: landscape) {
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  #about {
+    height: 50vh;
+    .content {
+      padding-top: 10vh !important;
+    }
+  }
+  // #initiator-wrapper, #initiator-profile {
+  //   flex-basis: 100%;
+  //   max-width: 100%;
+  // }
+}
+
+@media (width: 1024px) and (orientation: portrait) {
+  #about {
+    height: 50vh;
+    .content {
+      // padding-top: 10vh !important;
+    }
+  }
+  #initiator {
+    padding: 5vh 15vw;
+  }
+  #journey {
+    padding-top: 0;
+    #journey-wrapper {
+      padding-bottom: 10vh;
+    }
+  }
+  // #initiator-wrapper, #initiator-profile {
+  //   flex-basis: 100%;
+  //   max-width: 100%;
+  // }
+}
+
+@media screen and (max-width: 1023px) and (orientation: portrait) {
+  
+  #journey {
+    padding-top: 10vh;
+    #journey-wrapper {
+      padding: 10vh 10vw;
+      height: auto;
+    }
+    .journey-img {
+      width: 100%;
+      height: 30vh;
+    }
+  }
+
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
   #about {
     padding-top: 10vh;
     height: 100vh;
@@ -364,21 +429,24 @@ export default {
       }
     }
   }
-  
-  #journey {
-    padding-top: 10vh;
-    #journey-wrapper {
-      padding: 10vh 10vw;
-      height: auto;
-    }
-    .journey-img {
-      width: 100%;
-      height: 30vh;
-    }
-  }
+
+  // #about {
+  //   #about-jumbotron {
+  //     >div {
+  //       flex-basis: 1;
+  //     }
+  //     .content {
+  //       margin-bottom: 0;
+  //       padding: 10vh 10vw 5vw 10vw;
+  //     }
+  //   }
+  // }
 
   #initiator {
-    padding: 10vh 20vw;
+    padding: 10vh 10vw;
+    padding-top: 5vh;
+    width: 120vw;
+    // height: 100%;
     #initiator-profile {
       color: white;
       padding: 0;
@@ -411,18 +479,8 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
-  #about {
-    #about-jumbotron {
-      >div {
-        flex-basis: 1;
-      }
-      .content {
-        margin-bottom: 0;
-        padding: 10vh 10vw 5vw 10vw !important;
-      }
-    }
-  }
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  
 
   .member-photo {
     height: 60vw;
@@ -442,15 +500,15 @@ export default {
     padding: 5vh 10vw;
   }
 
-  #initiator-blue {
-    h3 {
-      font-size: 3.5vh;
-      margin-bottom: 0.5rem;
-    }
-    h4 {
-      font-size: 2vh;
-    }
-  }
+  // #initiator-blue {
+  //   h3 {
+  //     font-size: 3.5vh;
+  //     margin-bottom: 0.5rem;
+  //   }
+  //   h4 {
+  //     font-size: 2vh;
+  //   }
+  // }
 
   .message {
     h4 {
@@ -463,13 +521,6 @@ export default {
     padding-right: 5vw;
   }
 
-  #initiator {
-    padding-left: 10vw;
-    padding-right: 10vw;
-    padding-top: 5vh;
-    width: 120vw;
-    height: 100%;  
-  }
   #journey {
     padding-top: 5vh;
   }
