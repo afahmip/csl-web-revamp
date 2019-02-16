@@ -119,7 +119,7 @@
           <v-layout row wrap>
             <v-flex md7 xs12 class="text">
               <h1>Let's Join & Be Part of Us!</h1>
-              <router-link to="/router-linkpply#form">
+              <router-link to="/apply#form">
                 <button-square
                   text="Apply Now!"
                   color="rgb(6, 88, 196)"
@@ -129,7 +129,7 @@
               </router-link>
             </v-flex>
             <v-flex md5 xs12 id="click-here">
-              <router-link to="/router-linkpply#info">
+              <router-link to="/apply#info">
                 <p>For application<br>information:</p>
                 <h1>Click Here</h1>
               </router-link>

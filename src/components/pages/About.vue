@@ -100,7 +100,22 @@
         <h1 class="content__smalltitle">The Team Behind CS Leaders</h1>
         <h1 class="content__title">Our Board of Members</h1>
       </v-flex>
-      <v-flex class="member-holder">
+      <!-- <v-flex class="member-holder"> -->
+      <div v-masonry transition-duration="0.3s" item-selector=".member-holder" id="gallery__masonry">
+        <div v-masonry-tile class="member-holder" :key="index" v-for="(profile, index) in profiles">
+          <div class="member-photo">
+            <img :src="profile.image"/>
+          </div>
+          <div class="member-blue">
+            <router-link :to="profile.route">
+              <h4 class="member-name">{{profile.name}}</h4>
+            </router-link>
+            <p class="text member-position">{{profile.position}}</p>
+          </div>
+        </div>
+      </div>
+      <!-- </v-flex> -->
+      <!-- <v-flex class="member-holder">
         <v-flex
           xs10 offset-xs1 sm4 offset-sm1 md2
           v-for="profile in profiles"
@@ -118,7 +133,7 @@
             <p class="text member-position">{{profile.position}}</p>
           </div>
         </v-flex>
-      </v-flex>
+      </v-flex> -->
     </v-flex>
 
   </v-container>
@@ -283,27 +298,19 @@ export default {
 }
 
 #team {
-  padding-top: 10vh;
-  #team-title {
-    padding: 5vh 15vw;
-  }
+  padding: 10vh 15vw;
   .member-holder {
     color: white;
-    padding-bottom: 4vw;
-
+    margin: 3vh 5vw 3vh 0;
+    width: 15vw;
     a {
       text-decoration: none;
       color: white;
     }
-    div {
-      display: inline-block;
-      margin-bottom: 1vh;
-    }
   }
 
   .member-photo {
-    height: 30vh;
-    width: 100%;
+    height: 30%;
     overflow: hidden;
     margin: 0 !important;
 
@@ -316,7 +323,7 @@ export default {
 
   .member-blue {
     padding: 2vw;
-    height: calc(5vw + 5vh);
+    height: 50%;
     width: 100%;
     background-color: #08065a;
 
@@ -334,15 +341,6 @@ export default {
   h4 {
     font-size: 1.5vw;
   }
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 823px) and (orientation: landscape) {
-  
 }
 
 /* 
@@ -370,18 +368,11 @@ export default {
       height: 30vh;
     }
   }
-  // #initiator-wrapper, #initiator-profile {
-  //   flex-basis: 100%;
-  //   max-width: 100%;
-  // }
 }
 
 @media (width: 1024px) and (orientation: portrait) {
   #about {
     height: 50vh;
-    .content {
-      // padding-top: 10vh !important;
-    }
   }
   #initiator {
     padding: 5vh 15vw;
@@ -392,10 +383,6 @@ export default {
       padding-bottom: 10vh;
     }
   }
-  // #initiator-wrapper, #initiator-profile {
-  //   flex-basis: 100%;
-  //   max-width: 100%;
-  // }
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
@@ -427,21 +414,8 @@ export default {
     }
   }
 
-  // #about {
-  //   #about-jumbotron {
-  //     >div {
-  //       flex-basis: 1;
-  //     }
-  //     .content {
-  //       margin-bottom: 0;
-  //       padding: 10vh 10vw 5vw 10vw;
-  //     }
-  //   }
-  // }
-
   #initiator {
-    padding: 10vh 10vw;
-    padding-top: 5vh;
+    padding: 5vh 10vw 10vh 10vw;
     width: 120vw;
     #initiator-profile {
       color: white;
@@ -488,11 +462,28 @@ export default {
   #journey-wrapper {
     padding: 5vh 10vw;
   }
+
+  #team {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    .member-holder {
+      width: 75vw;
+    }
+    .member-blue {
+      height: auto;
+      padding: 2rem;
+      .member-name {
+        font-size: 2.5vh;
+      }
+      .member-position {
+        font-size: 1.5vh;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
   
-
   .member-photo {
     height: 60vw;
   }
@@ -501,30 +492,12 @@ export default {
     font-size: 1.3rem !important;
   }
 
-  
-
-  // #initiator-blue {
-  //   h3 {
-  //     font-size: 3.5vh;
-  //     margin-bottom: 0.5rem;
-  //   }
-  //   h4 {
-  //     font-size: 2vh;
-  //   }
-  // }
-
   .message {
     h4 {
       font-size: 2.5vh !important;
     }
   }
 
-  #team {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-
-  
   .journey-img {
     display: inline-block;
     width: 100%;
@@ -551,39 +524,5 @@ export default {
     }
   }
 
-  #team {
-    #team-title {
-      padding: 5vh 10vw;
-    }
-    .member-holder {
-      div {
-        display: inline-block;
-        margin-bottom: 1vh;
-      }
-    }
-
-    .member-photo {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .member-blue {
-      height: auto;
-      padding: 2rem;
-      .member-name {
-        font-size: 2.5vh;
-      }
-      .member-position {
-        font-size: 1.5vh;
-      }
-    }
-  }
-
-  // .message {
-  //   padding-left: 10vw;
-  // }
 }
 </style>
