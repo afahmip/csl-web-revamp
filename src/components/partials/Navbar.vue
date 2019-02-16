@@ -10,7 +10,7 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items class="hidden-sm-and-down">
-         <v-btn
+        <v-btn
           v-for="item in links"
           :key="item.icon"
           :to="item.link"
@@ -52,43 +52,26 @@ export default {
         {
           title: 'About Us',
           link: '/about-us',
-          children: []
         },
         {
           title: 'Our Programs',
           link: '/programs',
-          children: []
         },
         {
           title: 'Apply Now',
           link: '/apply',
-          children: []
         },
         {
           title: 'Meet Our Scholars',
           link: '/scholars',
-          children: [
-            {
-              title: 'CSLeaders Scholars',
-              link: '/csl-scholars',
-              children: []
-            },
-            {
-              title: 'Scholars Profile',
-              link: '/scholars-profile',
-              children: []
-            }
-          ]
         },
         {
           title: 'Sponsor',
           link: '/sponsor',
-          children: []
         },
         {
           title: 'Gallery',
           link: '/gallery',
-          children: []
         }
       ]
     }
