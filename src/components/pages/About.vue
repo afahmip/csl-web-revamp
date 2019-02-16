@@ -482,6 +482,45 @@ export default {
   }
 }
 
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  #about-jumbotron {
+    >div:first-child {
+      flex-basis: 48%;
+      max-width: 48%;
+    }
+    >div:last-child {
+      flex-basis: 52%;
+      max-width: 52%;
+    }
+  }
+  #initiator >div {
+    >div:first-child {
+      flex-basis: 48%;
+      max-width: 48%;
+    }
+    >div:last-child {
+      flex-basis: 52%;
+      max-width: 52%;
+    }
+  }
+  #journey >div {
+    >div:first-child {
+      flex-basis: 66%;
+      max-width: 66%;
+    }
+    >div:last-child {
+      flex-basis: 34%;
+      max-width: 34%;
+    }
+  }
+  #mission {
+    .mission-div {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+}
+
 @media screen and (max-width: 767px) and (orientation: portrait) {
   
   .member-photo {
@@ -489,7 +528,7 @@ export default {
   }
 
   p {
-    font-size: 1.3rem !important;
+    // font-size: 1.3rem !important;
   }
 
   .message {
@@ -514,6 +553,12 @@ export default {
     background-color: #e2e2e2;
     width: 100%;
     padding: 5vh 10vw;
+    .mission-text {
+      p {
+        margin-top: 1rem;
+        font-size: 1.5vh !important;
+      }
+    }
   }
   .text {
     font-size: 1.5vh;
@@ -522,6 +567,9 @@ export default {
     h4 {
       font-size: 2.3vh;
     }
+    // p {
+    //   font-size: 2vh;
+    // }
   }
 
 }

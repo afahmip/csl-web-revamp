@@ -85,12 +85,14 @@ export default {
   ##Screen = B/w 481px to 767px
 */
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (max-width: 767px) {
   #footer {
     padding: 9vh 10vw;
   }
 
   #footer__content {
+    flex-basis: 34%;
+    max-width: 34%;
     #csl-addr {
       p {
         line-height: 2.5vw;
@@ -104,6 +106,11 @@ export default {
       margin-bottom: 2rem;
     }
   }
+
+  #footer__map {
+    flex-basis: 66%;
+    max-width: 66%;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -115,12 +122,6 @@ export default {
     p {
       font-size: 2vh;
       line-height: 3vh;
-    }
-  }
-
-  #csl-logo {
-    img {
-      // width: 40vw;
     }
   }
 

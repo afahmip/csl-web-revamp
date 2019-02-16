@@ -42,7 +42,8 @@
           <v-layout row wrap>
             <v-flex
               md5
-              sm12
+              sm5
+              xs12
               v-for="article in articles"
               :key="article.title"
               class="news__article"
@@ -57,7 +58,7 @@
                 <h2>{{article.date}}</h2>
               </div>
             </v-flex>
-            <v-flex md5 sm12 id="medium">
+            <v-flex md5 sm5 xs12 id="medium">
               <p>
                 More on our <router-link to="this.$store.state.mediumUrl">Medium</router-link>
               </p>
@@ -67,7 +68,7 @@
 
         <v-flex xs12>
           <v-layout row wrap>
-            <v-flex md5 xs12>
+            <v-flex md5 xs12 id="content__img">
               <div id="img__about">
                 <img src="./../../assets/women.jpg" alt="">
               </div>
@@ -117,7 +118,7 @@
 
         <v-flex xs12 id="content__join">
           <v-layout row wrap>
-            <v-flex md7 xs12 class="text">
+            <v-flex md7 sm7 xs12 class="text">
               <h1>Let's Join & Be Part of Us!</h1>
               <router-link to="/apply#form">
                 <button-square
@@ -128,7 +129,7 @@
                 />
               </router-link>
             </v-flex>
-            <v-flex md5 xs12 id="click-here">
+            <v-flex md5 sm5 xs12 id="click-here">
               <router-link to="/apply#info">
                 <p>For application<br>information:</p>
                 <h1>Click Here</h1>
@@ -247,7 +248,7 @@ h1 {
     background-color: white;
 
     .news-image {
-      height: 50%;
+      height: 55%;
       overflow: hidden;
     }
 
@@ -385,46 +386,46 @@ h1 {
 
 @media screen and (max-width: 1025px) {
 
-  #news {
-    .news__article {
-      height: 40vh;
-      padding: 0;
+  // #news {
+  //   .news__article {
+  //     height: 40vh;
+  //     padding: 0;
 
-      .news-image {
-        height: 55%;
-      }
+  //     .news-image {
+  //       height: 55%;
+  //     }
 
-      .news-content {
-        padding: 2rem;
+  //     .news-content {
+  //       padding: 2rem;
 
-        h1 {
-          font-size: 2vh;
-          margin-bottom: 10px;
-        }
-        h2 {
-          font-size: 1.5vh;
-          margin-bottom: 20px;
-        }
-      }
+  //       h1 {
+  //         font-size: 2vh;
+  //         margin-bottom: 10px;
+  //       }
+  //       h2 {
+  //         font-size: 1.5vh;
+  //         margin-bottom: 20px;
+  //       }
+  //     }
 
-      .news__categories {
-        display: flex;
-        flex-direction: row;
+  //     .news__categories {
+  //       display: flex;
+  //       flex-direction: row;
 
-        >div {
-          padding: 10px 15px;
-          margin-right: 4px;
-          border-radius: 5px;
-        }
-      }
-    }
-    #medium {
-      margin: 0;
-      p {
-        font-size: 3vh;
-      }
-    }
-  }
+  //       >div {
+  //         padding: 10px 15px;
+  //         margin-right: 4px;
+  //         border-radius: 5px;
+  //       }
+  //     }
+  //   }
+  //   #medium {
+  //     margin: 0;
+  //     p {
+  //       font-size: 3vh;
+  //     }
+  //   }
+  // }
 
   #content {
     p, li {
@@ -553,28 +554,20 @@ h1 {
   
 }
 
-@media screen and (max-width: 768px) {
-
-  #btn-place {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #btn-place {
-    display: flex;
-    flex-direction: column;
-  }
+@media screen and (max-width: 1024px) and (orientation: portrait) {
 
   #news {
-    padding: 0 10vw 10vh 20vw;
+    // padding: 0 10vw 10vh 20vw;
 
     .text {
       padding: 0 12vw;
     }
     .news__article {
-      height: 45vh;
+      height: 35vh;
       padding: 0;
       margin: 0 10vw 2vh 10vw;
+      flex-basis: 100%;
+      max-width: 100%;
 
       .news-image {
         height: 50%;
@@ -595,6 +588,11 @@ h1 {
     }
     #medium {
       margin: 8vh 10vw;
+      flex-basis: 100%;
+      max-width: 100%;
+      p {
+        font-size: 2.5vh;
+      }
     }
   }
 
@@ -607,6 +605,10 @@ h1 {
       font-size: 2vh;
       line-height: 2.7vh;
     }
+    #content__img, #content__about {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
     #content__about {
       padding: 0 12vw;
     }
@@ -617,6 +619,8 @@ h1 {
         line-height: 2.7vh;
       }
       .scholarship-item {
+        flex-basis: 100%;
+        max-width: 100%;
         margin-bottom: 3vh;
         padding: 2rem;
         h1 {
@@ -633,12 +637,16 @@ h1 {
     #content__join {
       padding: 0;
       .text {
+        flex-basis: 100%;
+        max-width: 100%;
         padding: 0 12vw;
       }
       h1 {
         font-size: 5vh;
       }
       #click-here {
+        flex-basis: 100%;
+        max-width: 100%;
         padding: 5vh 12vw;
         position: static;
         a {
@@ -654,5 +662,25 @@ h1 {
       }
     }
   }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+
+  #btn-place {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #content__join {
+    .text {
+      flex-basis: 52%;
+      max-width: 52%;
+    }
+    #click-here {
+      flex-basis: 48%;
+      max-width: 48%;
+    }
+  }
+
 }
 </style>
