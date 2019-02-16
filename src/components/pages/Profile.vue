@@ -174,7 +174,47 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
-  
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  #profile {
+    padding: 15vh 10vw;
+
+    #title {
+      h1 {
+        font-size: 3.5vh;
+      }
+    }
+
+    #data {
+      margin-bottom: 10vh;
+      #photo {
+        flex-basis: 42%;
+        max-width: 42%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      #text {
+        flex-basis: 58%;
+        max-width: 58%;
+        padding: 5vh;
+        h1 {
+          font-size: 3.5vh;
+          margin-bottom: 1vh;
+        }
+        h2 {
+          font-size: 2.5vh;
+          margin-bottom: 2.5vh;
+        }
+        p {
+          font-size: 2vh;
+          line-height: 3vh;
+        }
+      }
+    }
+  }
 }
+
 </style>
