@@ -4,7 +4,7 @@
 
       <v-flex xs12 id="programs__jumbotron">
         <v-layout row wrap>
-          <v-flex md7>
+          <v-flex md7 sm7 xs7>
             <div id="content">
               <v-layout row wrap>
                 <v-flex md3 id="content__block">
@@ -12,11 +12,18 @@
                 <v-flex md9 id="text">
                   <h1>Our Programs</h1>
                   <p>We aim to create a better future generation for Indonesia, create new leaders in the field of computer science and to improve people’s lives through Computer Science education.</p>
+                  <button-square
+                    text="Know More"
+                    color="#000"
+                    hover="#fff"
+                    v-scroll-to="'#our-program'"
+                    medium="true"
+                  />
                 </v-flex>
               </v-layout>
             </div>
           </v-flex>
-          <v-flex md5>
+          <v-flex md5 sm5 xs5>
             <v-layout row wrap id="programs__photo-wrapper">
               <v-flex xs12 class="programs__jumbotron-photo">
                 <img src="./../../assets/camp.jpg" alt="">
@@ -79,14 +86,14 @@
 
       <v-flex xs12 id="program-scholarship">
         <v-layout row wrap>
-          <v-flex md7 xs12 class="text">
+          <v-flex md7 sm7 xs7 class="text">
             <h2 class="content__smalltitle">Our Program</h2>
             <h1 class="content__title">Scholarship Program</h1>
             <p>A four-year scholarship and leadership development program for computer science undergraduate at University of Indonesia (UI) and Bandung Institute of Technology (ITB).</p>
             <br><br>
           </v-flex>
 
-          <v-flex md5 xs12 id="click-here">
+          <v-flex md5 sm5 xs5 id="click-here">
             <a href="/apply#info">
               <p>For application<br>information:</p>
               <h1>Click Here</h1>
@@ -101,8 +108,13 @@
 </template>
 
 <script>
+import ButtonSquare from './../partials/ButtonSquare.vue';
+
 export default {
-  name: 'Programs'
+  name: 'Programs',
+  components: {
+    ButtonSquare,
+  },
 }
 </script>
 
@@ -200,22 +212,13 @@ export default {
 
   .text {
     padding-right: 5vw;
-    // background-color: red;
   }
   #program-scholarship__list {
     height: 100%;
-    // position: relative;
-
-    background-color: green;
-
-    
   }
 
   #click-here {
-    // height: 100%;
-    // width: 100%;
     background-color: #012EA3;
-    // position: absolute;
     position: relative;
     a {
       position: absolute;
@@ -237,9 +240,9 @@ export default {
 
   #programs__jumbotron {
     #content {
-      #content__block {
-        display: none;
-      }
+      // #content__block {
+      //   display: none;
+      // }
       #text {
         color: black;
         h1 {
@@ -292,8 +295,21 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
   #programs__jumbotron {
+    >div >div {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
     #content {
       #content__block {
         display: none;
@@ -357,12 +373,16 @@ export default {
 
     .text {
       padding: 0 10vw;
+      flex-basis: 100%;
+      max-width: 100%;
     }
     #program-scholarship__list {
       height: 100%;
     }
 
     #click-here {
+      flex-basis: 100%;
+      max-width: 100%;
       padding: 5vh 12vw;
       position: static;
       a {
