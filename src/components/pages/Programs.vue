@@ -94,10 +94,10 @@
           </v-flex>
 
           <v-flex md5 sm5 xs5 id="click-here">
-            <a href="/apply#info">
+            <router-link to="/apply#info">
               <p>For application<br>information:</p>
               <h1>Click Here</h1>
-            </a>
+            </router-link>
           </v-flex>
 
         </v-layout>

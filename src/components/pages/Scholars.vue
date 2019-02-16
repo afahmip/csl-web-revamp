@@ -241,9 +241,9 @@ html, body {
     background-color: white;
     #wrap {
       height: 100%;
-      overflow: scroll;
+      overflow: auto;
       #modal__data {
-        overflow: scroll;
+        overflow: auto;
         padding: 4vw;
         h1 {
           color: $blue;
