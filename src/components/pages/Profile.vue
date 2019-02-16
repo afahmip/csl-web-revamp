@@ -7,10 +7,10 @@
       </v-flex>
       <v-flex xs12 id="data">
         <v-layout row wrap>
-          <v-flex md5 id="photo">
+          <v-flex md5 sm5 xs12 id="photo">
             <img :src="profile.image" alt="">
           </v-flex>
-          <v-flex md7 id="text">
+          <v-flex md7 sm7 xs12 id="text">
             <h1>{{profile.name}}</h1>
             <h2>{{profile.position}}</h2>
             <p>{{profile.description}}</p>
@@ -102,8 +102,41 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
-    #profile {
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  #profile {
+    padding: 15vh 10vw;
+    #title {
+      h1 {
+        font-size: 3.5vh;
+      }
+    }
+    #data {
+      #text {
+        padding: 3vh;
+        h1 {
+          font-size: 2.5vh;
+          margin-bottom: 1vh;
+        }
+        h2 {
+          font-size: 1.5vh;
+          margin-bottom: 2.5vh;
+        }
+        p {
+          font-size: 1.5vw;
+          line-height: 2vh;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  #profile {
     padding: 15vh 10vw;
 
     #title {
@@ -139,5 +172,9 @@ export default {
       }
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  
 }
 </style>
