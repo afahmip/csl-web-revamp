@@ -351,10 +351,23 @@ export default {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
   #about {
     height: 50vh;
     .content {
       padding-top: 10vh !important;
+    }
+  }
+
+  #journey {
+    padding-top: 0;
+    #journey-wrapper {
+      padding: 10vh 10vw;
+      height: auto;
+    }
+    .journey-img {
+      width: 100%;
+      height: 30vh;
     }
   }
   // #initiator-wrapper, #initiator-profile {
@@ -383,22 +396,6 @@ export default {
   //   flex-basis: 100%;
   //   max-width: 100%;
   // }
-}
-
-@media screen and (max-width: 1023px) and (orientation: portrait) {
-  
-  #journey {
-    padding-top: 10vh;
-    #journey-wrapper {
-      padding: 10vh 10vw;
-      height: auto;
-    }
-    .journey-img {
-      width: 100%;
-      height: 30vh;
-    }
-  }
-
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
@@ -446,7 +443,6 @@ export default {
     padding: 10vh 10vw;
     padding-top: 5vh;
     width: 120vw;
-    // height: 100%;
     #initiator-profile {
       color: white;
       padding: 0;
@@ -477,6 +473,21 @@ export default {
       }
     }
   }
+
+  #journey {
+    padding-top: 0;
+    >div:last-child > img:last-child {
+      display: none;
+    }
+    #journey-wrapper {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+  }
+
+  #journey-wrapper {
+    padding: 5vh 10vw;
+  }
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
@@ -490,15 +501,7 @@ export default {
     font-size: 1.3rem !important;
   }
 
-  #journey {
-    >div:last-child > img:last-child {
-      display: none;
-    }
-  }
-
-  #journey-wrapper {
-    padding: 5vh 10vw;
-  }
+  
 
   // #initiator-blue {
   //   h3 {
@@ -521,9 +524,7 @@ export default {
     padding-right: 5vw;
   }
 
-  #journey {
-    padding-top: 5vh;
-  }
+  
   .journey-img {
     display: inline-block;
     width: 100%;
