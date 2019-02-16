@@ -77,6 +77,34 @@ export default {
   }
 }
 
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (max-width: 1024px) and (orientation: portrait) {
+  .btn-square.btn-big {
+    p {
+      font-size: 2.5vw;
+      margin: 4vh 6vw;
+    }
+  }
+
+  .btn-square.btn-med {
+    p {
+      font-size: 2.5vw;
+      margin: 3vh auto;
+    }
+  }
+
+  .btn-square.btn-sm {
+    p {
+      font-size: 1.5vw !important;
+      margin: 1.5vh auto;
+    }
+  }
+}
+
 @media screen and (max-width: 1025px) {
   .btn-square.btn-big {
     p {

@@ -35,10 +35,10 @@
           <v-layout row wrap>
             <v-flex xs12 class="hall-item">
               <v-layout row wrap>
-                <v-flex md4 class="program-photo">
+                <v-flex md4 sm12 class="program-photo">
                   <img src="./../../assets/hall/turfa.jpg" alt="">
                 </v-flex>
-                <v-flex md8 class="program-content">
+                <v-flex md8 sm12 class="program-content">
                   <h2>Turfa Auliarachman won the 3rd place ICPC 2017!</h2>
                   <p>ICPC (International Collegiate Programming Contest) is a competitive programming competition held by UGM. It’s part of UGM Vocomfest event, which is held annually. We are happy to inform that Turfa Auliarachman won the 3rd place in the competition. We hope that our scholars will be encouraged to achieve even more. Congratulation Turfa!</p>
                 </v-flex>
@@ -93,10 +93,10 @@
         >
           <div id="modal__content">
             <v-layout row wrap id="wrap">
-              <v-flex md5 sm12 id="modal__image">
+              <v-flex md5 sm5 xs12 id="modal__image">
                 <img :src="modal.image" alt="">
               </v-flex>
-              <v-flex md7 sm12 id="modal__data">
+              <v-flex md7 sm7 xs12 id="modal__data">
                 <h1>{{modal.name}}</h1>
                 <h2>{{modal.university}}</h2>
                 <h3>Batch {{modal.batch}}</h3>
@@ -236,12 +236,14 @@ html, body {
   align-content: center;
 
   #modal__content {
-    height: 60vh;
+    height: 70vh;
     width: 70vw;
     background-color: white;
     #wrap {
       height: 100%;
+      overflow: scroll;
       #modal__data {
+        overflow: scroll;
         padding: 4vw;
         h1 {
           color: $blue;
@@ -270,7 +272,8 @@ html, body {
         overflow: hidden;
         img {
           height: 100%;
-          width: auto;
+          width: 100%;
+          object-fit: cover;
         }
       }
     }
@@ -399,7 +402,45 @@ html, body {
   }
 }
 
-@media screen and (max-width: 768px) {
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  #scholars__jumbotron {
+    #content, #photo {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+
+  #hall-of-fame {
+    .hall-item {
+      .program-photo {
+        flex-basis: 34%;
+        max-width: 34%;
+      }
+      .program-content {
+        flex-basis: 66%;
+        max-width: 66%;
+      }
+    }
+  }
+
+  #wrap {
+    #modal__image {
+      flex-basis: 42%;
+      max-width: 42%;
+    }
+    #modal__data {
+      flex-basis: 58%;
+      max-width: 58%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
   #modal {
     #modal__content {
       min-height: 80vh;
@@ -407,6 +448,8 @@ html, body {
       #wrap {
         height: 100%;
         #modal__data {
+          flex-basis: 100%;
+          max-width: 100%;
           padding: 4vw;
           h1 {
             font-size: 3vh;
@@ -420,7 +463,8 @@ html, body {
             margin-bottom: 2vh;
           }
           p {
-            font-size: 1.5vh;
+            font-size: 1.6vh;
+            line-height: 2.6vh;
           }
           #modal__btn {
             display: flex;
@@ -429,7 +473,9 @@ html, body {
         }
         #modal__image {
           overflow: hidden;
-          height: 40%;
+          height: 50%;
+          flex-basis: 100%;
+          max-width: 100%;
           img {
             width: 100%;
             height: auto;
@@ -438,13 +484,12 @@ html, body {
       }
     }
   }
+
   #hall-of-fame {
     padding: 0 10vw 10vh 10vw;
-    
     p {
       font-size: 1vw;
     }
-
     .hall-item {
       padding: 0;
       background-color: white;
@@ -460,6 +505,8 @@ html, body {
         padding: 0;
         justify-content: center;
         overflow: hidden;
+        flex-basis: 100%;
+        max-width: 100%;
         img {
           object-fit: cover;
           height: 100%;
@@ -467,12 +514,17 @@ html, body {
         }
       }
       .program-content {
+        flex-basis: 100%;
+        max-width: 100%;
         padding: 2vh;
       }
     }
   }
+
   #scholars__jumbotron {
     #content {
+      flex-basis: 100%;
+      max-width: 100%;
       height: 70vh;
       h1 {
         font-size: 6vh;
@@ -486,6 +538,8 @@ html, body {
       }
     }
     #photo {
+      flex-basis: 100%;
+      max-width: 100%;
       height: 30vh;
       img {
         width: 100%;
@@ -494,6 +548,7 @@ html, body {
       }
     }
   }
+
   #scholar-list {
     padding: 0 10vw 10vh 10vw;
     .item {
