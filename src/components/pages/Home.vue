@@ -116,6 +116,41 @@
           </v-flex>
         </v-flex>
 
+        <v-flex xs12 id="content__sponsor">
+          <v-layout row wrap>
+            <v-flex lg8 md6 sm12 xs12 id="partner__sponsor">
+              <h2 class="content__smalltitle">Our Partners</h2>
+              <h1 class="content__title">Program Sponsors</h1>
+              <v-layout row wrap>
+                <v-flex md3 sm6 xs6 class="partner-img">
+                  <img src="./../../assets/sponsors/tokopedia-logo.png" alt="">
+                </v-flex>
+                <v-flex md3 sm6 xs6 class="partner-img">
+                  <img src="./../../assets/sponsors/jd-id-logo.png" alt="">
+                </v-flex>
+                <v-flex md3 sm6 xs6 class="partner-img">
+                  <img src="./../../assets/sponsors/mr-eduardo-logo.png" alt="">
+                </v-flex>
+                <v-flex md3 sm6 xs6 class="partner-img">
+                  <img src="./../../assets/sponsors/monks-hill-logo.png" alt="">
+                </v-flex>
+              </v-layout>
+            </v-flex>
+            <v-flex lg4 md6 sm12 xs12 id="partner__univ">
+              <h2 class="content__smalltitle" style="color: white">.</h2>
+              <h1 class="content__title">University Partners</h1>
+              <v-layout row wrap>
+                <v-flex md6 sm6 xs6 class="partner-img">
+                  <img src="./../../assets/ui-logo.png" alt="">
+                </v-flex>
+                <v-flex md6 sm6 xs6 class="partner-img">
+                  <img src="./../../assets/itb-logo.png" alt="">
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+
         <v-flex xs12 id="content__join">
           <v-layout row wrap>
             <v-flex md7 sm7 xs12 class="text">
@@ -345,6 +380,17 @@ h1 {
       }
     }
   }
+  #content__sponsor {
+    padding: 10vh 20vw;
+    .partner-img {
+      padding-right: 10px;
+      display: flex;
+      align-items: center;
+    }
+    >div>div>div:last-child {
+      padding-left: 2rem;
+    }
+  }
   #content__join {
     padding: 0 0 0 20vw;
 
@@ -385,47 +431,6 @@ h1 {
 */
 
 @media screen and (max-width: 1025px) {
-
-  // #news {
-  //   .news__article {
-  //     height: 40vh;
-  //     padding: 0;
-
-  //     .news-image {
-  //       height: 55%;
-  //     }
-
-  //     .news-content {
-  //       padding: 2rem;
-
-  //       h1 {
-  //         font-size: 2vh;
-  //         margin-bottom: 10px;
-  //       }
-  //       h2 {
-  //         font-size: 1.5vh;
-  //         margin-bottom: 20px;
-  //       }
-  //     }
-
-  //     .news__categories {
-  //       display: flex;
-  //       flex-direction: row;
-
-  //       >div {
-  //         padding: 10px 15px;
-  //         margin-right: 4px;
-  //         border-radius: 5px;
-  //       }
-  //     }
-  //   }
-  //   #medium {
-  //     margin: 0;
-  //     p {
-  //       font-size: 3vh;
-  //     }
-  //   }
-  // }
 
   #content {
     p, li {
@@ -634,6 +639,18 @@ h1 {
         }
       }
     }
+    #content__sponsor {
+      padding: 10vh 10vw;
+      .partner-img {
+        padding-right: 3rem;
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      #partner__sponsor, #partner__univ {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
     #content__join {
       padding: 0;
       .text {
@@ -679,6 +696,24 @@ h1 {
     #click-here {
       flex-basis: 48%;
       max-width: 48%;
+    }
+  }
+
+  #content__sponsor {
+    .partner-img {
+      flex-basis: 25%;
+      max-width: 25%;
+    }
+    >div>div>div:last-child {
+      padding-left: 0;
+    }
+    #partner__sponsor {
+      flex-basis: 66%;
+      max-width: 66%;
+    }
+    #partner__univ {
+      flex-basis: 34%;
+      max-width: 34%;
     }
   }
 

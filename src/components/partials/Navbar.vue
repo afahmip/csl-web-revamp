@@ -89,7 +89,7 @@ export default {
 
     img {
       object-fit: cover;
-      height: 30px;
+      height: 40px;
     }
   }
 
