@@ -95,6 +95,20 @@
             <h2 class="content__smalltitle">Our Program</h2>
             <h1 class="content__title">Scholarship Program</h1>
             <p>A four-year scholarship and leadership development program for computer science undergraduate at University of Indonesia (UI) and Bandung Institute of Technology (ITB).</p>
+            <v-layout row wrap>
+              <v-flex lg3 md3 sm6 xs6 class="scholar__img">
+                <img src="./../../assets/gallery/4.jpg" alt="">
+              </v-flex>
+              <v-flex lg3 md3 sm6 xs6 class="scholar__img">
+                <img src="./../../assets/gallery/10.jpg" alt="">
+              </v-flex>
+              <v-flex lg3 md3 sm6 xs6 class="scholar__img">
+                <img src="./../../assets/gallery/11.jpg" alt="">
+              </v-flex>
+              <v-flex lg3 md3 sm6 xs6 class="scholar__img">
+                <img src="./../../assets/gallery/5.jpg" alt="">
+              </v-flex>
+            </v-layout>
           </v-flex>
           <v-flex xs12>
             <v-layout row wrap>
@@ -361,6 +375,14 @@ h1 {
   #content__scholarship {
     padding: 0 20vw 10vh 20vw;
     background-color: #ECF7FD;
+
+    .scholar__img {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
 
     .scholarship-item {
       padding: 2vw;
